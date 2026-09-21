@@ -1,0 +1,198 @@
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { getProductBySlug, getProducts } from "@/lib/cms";
+import { siteConfig } from "@/config/site";
+import { ProductCard } from "@/components/ProductCard";
+import { WhatsAppGroupBanner } from "@/components/WhatsAppGroupBanner";
+import {
+  ShieldCheck,
+  Truck,
+  WhatsappLogo,
+  ArrowLeft,
+  Sparkle,
+  CheckCircle,
+  Clock,
+} from "@phosphor-icons/react/dist/ssr";
+import type { Metadata } from "next";
+
+export async function generateStaticParams() {
+  const products = await getProducts();
+  return products.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const product = await getProductBySlug(slug);
+  if (!product) return { title: "Product Not Found" };
+
+  return {
+    title: `${product.name} | Solution Spiritual Healing & Prayer`,
+    description: product.shortDescription,
+    openGraph: {
+      title: `${product.name} | Solution Spiritual Healing & Prayer`,
+      description: product.shortDescription,
+      images: [{ url: product.image }],
+    },
+  };
+}
+
+export default async function ProductDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const product = await getProductBySlug(slug);
+
+  if (!product) {
+    notFound();
+  }
+
+  const allProducts = await getProducts();
+  const relatedProducts = allProducts
+    .filter((p) => p.slug !== product.slug && p.category === product.category)
+    .slice(0, 3);
+
+  // Structured Data Schema for Product
+  const productJsonLd = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    name: product.name,
+    image: product.image,
+    description: product.shortDescription,
+    category: product.category,
+    brand: {
+      "@type": "Brand",
+      name: siteConfig.brand,
+    },
+  };
+
+  return (
+    <div className="w-full flex flex-col py-10 sm:py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Back Link */}
+        <div className="mb-8">
+          <Link
+            href="/products"
+            className="inline-flex items-center gap-2 text-xs font-bold text-muted hover:text-emerald-deep transition-colors"
+          >
+            <ArrowLeft size={16} weight="bold" className="rtl:rotate-180" />
+            <span>Back to All Products</span>
+          </Link>
+        </div>
+
+        {/* Main Product Showcase Card */}
+        <div className="bg-white rounded-3xl border border-gold-hairline/80 shadow-soft-lg p-6 sm:p-10 lg:p-12 mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+            {/* Left Image View */}
+            <div className="lg:col-span-6 flex justify-center">
+              <div className="relative w-full max-w-lg aspect-square rounded-3xl overflow-hidden bg-cream-light border border-gold-hairline/50 shadow-soft">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  priority
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            {/* Right Product Information */}
+            <div className="lg:col-span-6 flex flex-col space-y-6">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-light border border-emerald-deep/20 text-emerald-deep text-xs font-bold uppercase tracking-wider mb-3">
+                  <Sparkle size={14} weight="fill" className="text-gold" />
+                  {product.category}
+                </div>
+                <h1 className="text-3xl sm:text-4xl font-bold font-serif text-charcoal tracking-tight">
+                  {product.name}
+                </h1>
+                <p className="mt-3 text-base sm:text-lg text-emerald-deep font-medium leading-relaxed">
+                  {product.shortDescription}
+                </p>
+              </div>
+
+              {/* Delivery info chip */}
+              <div className="p-4 rounded-2xl bg-cream-light border border-gold-hairline/60 flex items-center gap-3">
+                <Truck size={22} weight="fill" className="text-emerald-deep shrink-0" />
+                <div className="text-xs sm:text-sm text-charcoal">
+                  <strong>Nationwide Delivery: </strong>
+                  Prompt and discreet Nationwide Delivery.
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
+                <a
+                  href={`https://wa.me/2348035948898?text=${encodeURIComponent(product.whatsappMessage)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  id="product-detail-wa-btn"
+                  className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 py-4 px-6 rounded-2xl bg-emerald-deep hover:bg-emerald-forest text-white font-bold text-sm shadow-soft hover:shadow-soft-lg transition-all active:scale-95"
+                >
+                  <WhatsappLogo size={20} weight="fill" className="text-gold-light" />
+                  <span>Order Directly on WhatsApp</span>
+                </a>
+              </div>
+
+              {/* Long Description & Guidance */}
+              <div className="pt-6 border-t border-gold-hairline/60 space-y-4">
+                <h3 className="text-lg font-bold font-serif text-charcoal">
+                  About This Formulation
+                </h3>
+                {product.longDescription.map((paragraph, i) => (
+                  <p key={i} className="text-sm text-charcoal/80 leading-relaxed">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+
+              {/* Traditional Standard Points */}
+              <div className="pt-4 space-y-2 text-xs text-muted">
+                <div className="flex items-center gap-2">
+                  <CheckCircle size={16} weight="fill" className="text-emerald-deep" />
+                  <span>100% natural botanical ingredients rooted in African herbal heritage</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle size={16} weight="fill" className="text-emerald-deep" />
+                  <span>Prepared with dedicated prayer and spiritual intentionality</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Clock size={16} weight="fill" className="text-emerald-deep" />
+                  <span>Available for same-day dispatch or in-person pickup in Owode Egba</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Related Products */}
+        {relatedProducts.length > 0 && (
+          <div className="mb-16">
+            <h2 className="text-2xl sm:text-3xl font-bold font-serif text-charcoal mb-8">
+              Related Formulations in {product.category}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {relatedProducts.map((rel) => (
+                <ProductCard key={rel.id} product={rel} />
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      <WhatsAppGroupBanner />
+    </div>
+  );
+}
