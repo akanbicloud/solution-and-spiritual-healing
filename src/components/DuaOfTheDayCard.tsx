@@ -35,14 +35,14 @@ export function DuaOfTheDayCard({ dua }: { dua: Dua | null }) {
   };
 
   return (
-    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white via-ivory to-cream border border-gold/40 shadow-soft-lg p-6 sm:p-10 max-w-4xl mx-auto my-12">
+    <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-white via-ivory to-cream border border-gold/40 shadow-soft-lg p-4 sm:p-8 md:p-10 max-w-4xl mx-auto my-8 sm:my-12">
       {/* Decorative Islamic Background Pattern */}
       <div className="absolute inset-0 bg-islamic-pattern opacity-5 pointer-events-none" />
       <div className="absolute -bottom-10 -right-10 w-48 h-48 bg-gold/10 rounded-full blur-2xl pointer-events-none" />
 
       <div className="relative z-10 flex flex-col items-center text-center">
         {/* Top category & badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-light border border-emerald-deep/20 text-emerald-deep text-xs font-bold uppercase tracking-wider mb-4">
+        <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-emerald-light border border-emerald-deep/20 text-emerald-deep text-xs font-bold uppercase tracking-wider mb-4">
           <Sparkle size={15} weight="fill" className="text-gold" />
           <span>{dua.category}</span>
           <span className="text-emerald-300">•</span>
@@ -50,7 +50,7 @@ export function DuaOfTheDayCard({ dua }: { dua: Dua | null }) {
         </div>
 
         {/* Section title */}
-        <h3 className="text-2xl sm:text-3xl font-bold font-serif text-charcoal tracking-tight mb-6">
+        <h3 className="text-xl sm:text-3xl font-bold font-serif text-charcoal tracking-tight mb-4 sm:mb-6">
           {t("duaSection", "title")}
         </h3>
 
@@ -58,18 +58,18 @@ export function DuaOfTheDayCard({ dua }: { dua: Dua | null }) {
         <div
           dir="rtl"
           lang="ar"
-          className="my-4 py-4 px-6 sm:px-8 rounded-2xl bg-cream-light/60 border border-gold-hairline/60 w-full font-arabic text-2xl sm:text-3xl lg:text-4xl text-emerald-deep font-bold leading-loose text-center shadow-inner"
+          className="my-3 sm:my-4 py-3 sm:py-4 px-3 sm:px-8 rounded-2xl bg-cream-light/60 border border-gold-hairline/60 w-full font-arabic text-xl sm:text-3xl lg:text-4xl text-emerald-deep font-bold leading-loose text-center shadow-inner break-words"
         >
           {dua.arabic}
         </div>
 
         {/* Transliteration */}
-        <div className="mt-4 max-w-2xl text-xs sm:text-sm text-charcoal/80 font-medium italic leading-relaxed">
+        <div className="mt-3 sm:mt-4 max-w-2xl text-xs sm:text-sm text-charcoal/80 font-medium italic leading-relaxed">
           {dua.transliteration}
         </div>
 
         {/* Translation */}
-        <div className="mt-4 max-w-2xl text-sm sm:text-base text-charcoal font-serif leading-relaxed px-4 py-2 border-t border-b border-gold-hairline/40">
+        <div className="mt-3 sm:mt-4 max-w-2xl text-xs sm:text-base text-charcoal font-serif leading-relaxed px-3 sm:px-4 py-2 border-t border-b border-gold-hairline/40">
           “{dua.translation}”
         </div>
 
@@ -80,12 +80,12 @@ export function DuaOfTheDayCard({ dua }: { dua: Dua | null }) {
         </div>
 
         {/* Copy & WhatsApp Share Actions */}
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+        <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto">
           <button
             type="button"
             id="copy-dua-btn"
             onClick={handleCopy}
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-emerald-deep/30 bg-white hover:bg-emerald-light text-emerald-deep text-xs sm:text-sm font-semibold shadow-soft-sm transition-all hover-lift active:scale-95"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-xl border border-emerald-deep/30 bg-white hover:bg-emerald-light text-emerald-deep text-xs sm:text-sm font-semibold shadow-soft-sm transition-all hover-lift active:scale-95 min-h-[42px]"
           >
             {copied ? (
               <>
@@ -105,7 +105,7 @@ export function DuaOfTheDayCard({ dua }: { dua: Dua | null }) {
             target="_blank"
             rel="noopener noreferrer"
             id="share-dua-whatsapp-btn"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-deep hover:bg-emerald-forest text-white text-xs sm:text-sm font-semibold shadow-soft transition-all hover-lift active:scale-95"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 sm:py-2.5 rounded-xl bg-emerald-deep hover:bg-emerald-forest text-white text-xs sm:text-sm font-semibold shadow-soft transition-all hover-lift active:scale-95 min-h-[42px]"
           >
             <ShareNetwork size={16} weight="bold" className="text-gold-light" />
             <span>{t("duaSection", "shareWaBtn")}</span>

@@ -30,9 +30,9 @@ export function ProductCatalog({ products }: { products: Product[] }) {
   return (
     <div className="w-full">
       {/* Search and Category Filter Bar */}
-      <div className="bg-white rounded-3xl border border-gold-hairline/70 p-4 sm:p-6 shadow-soft mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="bg-white rounded-3xl border border-gold-hairline/70 p-4 sm:p-6 shadow-soft mb-8 sm:mb-12 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4 sm:gap-6">
         {/* Category Pills */}
-        <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
+        <div className="flex items-center gap-2 w-full md:w-auto overflow-x-auto pb-1.5 sm:pb-0 sm:flex-wrap">
           {categories.map((cat) => {
             const isSelected = selectedCategory === cat.value;
             return (
@@ -40,7 +40,7 @@ export function ProductCatalog({ products }: { products: Product[] }) {
                 key={cat.value}
                 type="button"
                 onClick={() => setSelectedCategory(cat.value)}
-                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+                className={`px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold transition-all shrink-0 min-h-[38px] flex items-center ${
                   isSelected
                     ? "bg-emerald-deep text-white shadow-soft"
                     : "bg-cream-light text-charcoal hover:bg-cream border border-gold-hairline/40"
@@ -60,14 +60,14 @@ export function ProductCatalog({ products }: { products: Product[] }) {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search herbal remedies..."
-            className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-cream-light border border-gold-hairline text-xs font-medium text-charcoal placeholder-muted focus:outline-none focus:ring-2 focus:ring-emerald-deep/40 focus:bg-white"
+            className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-cream-light border border-gold-hairline text-xs font-medium text-charcoal placeholder-muted focus:outline-none focus:ring-2 focus:ring-emerald-deep/40 focus:bg-white min-h-[42px]"
           />
           <MagnifyingGlass size={16} weight="bold" className="text-muted absolute left-3 top-1/2 -translate-y-1/2 rtl:left-auto rtl:right-3" />
         </div>
       </div>
 
       {/* Delivery Banner */}
-      <div className="mb-10 p-4 rounded-2xl bg-emerald-deep text-white flex flex-col sm:flex-row items-center justify-between gap-3 shadow-soft text-center sm:text-left rtl:sm:text-right">
+      <div className="mb-8 sm:mb-10 p-4 rounded-2xl bg-emerald-deep text-white flex flex-col sm:flex-row items-center justify-between gap-3 shadow-soft text-center sm:text-left rtl:sm:text-right">
         <div className="flex items-center gap-3">
           <div className="p-2 rounded-xl bg-white/10 text-gold-light shrink-0">
             <Truck size={22} weight="fill" />

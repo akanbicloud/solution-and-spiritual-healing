@@ -89,7 +89,7 @@ export default async function BlogPostDetailPage({
   };
 
   return (
-    <article className="w-full flex flex-col py-10 sm:py-16">
+    <article className="w-full flex flex-col py-6 sm:py-16">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
@@ -97,10 +97,10 @@ export default async function BlogPostDetailPage({
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Link */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 text-xs font-bold text-muted hover:text-emerald-deep transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-bold text-muted hover:text-emerald-deep transition-colors py-1.5"
           >
             <ArrowLeft size={16} weight="bold" className="rtl:rotate-180" />
             <span>Back to All Articles</span>
@@ -114,11 +114,11 @@ export default async function BlogPostDetailPage({
             {post.category}
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-charcoal tracking-tight leading-tight mb-4">
+          <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold font-serif text-charcoal tracking-tight leading-tight mb-4">
             {post.title}
           </h1>
 
-          <div className="flex flex-wrap items-center justify-center sm:justify-start rtl:sm:justify-end gap-4 text-xs text-muted pb-6 border-b border-gold-hairline/60">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start rtl:sm:justify-end gap-x-4 gap-y-2 text-xs text-muted pb-6 border-b border-gold-hairline/60">
             <span className="flex items-center gap-1 font-medium">
               <CalendarBlank size={15} weight="bold" className="text-gold" />
               {new Date(post.publishedAt).toLocaleDateString("en-US", {
@@ -127,29 +127,29 @@ export default async function BlogPostDetailPage({
                 day: "numeric",
               })}
             </span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
             <span className="flex items-center gap-1 font-medium">
               <Clock size={15} weight="bold" />
               {post.readingTimeMinutes} min read
             </span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
             <span className="font-semibold text-emerald-deep">By {siteConfig.name}</span>
           </div>
 
           {/* Multilingual Notice */}
-          <div className="mt-4 p-3 rounded-2xl bg-cream-light border border-gold-hairline/60 flex items-center justify-between gap-3 text-xs text-muted">
+          <div className="mt-4 p-3 rounded-2xl bg-cream-light border border-gold-hairline/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3 text-xs text-muted">
             <div className="flex items-center gap-2">
-              <Globe size={16} weight="regular" className="text-emerald-deep" />
+              <Globe size={16} weight="regular" className="text-emerald-deep flex-shrink-0" />
               <span>This article is available in English.</span>
             </div>
-            <span className="text-[11px] text-emerald-deep font-semibold">
+            <span className="text-[11px] text-emerald-deep font-semibold self-end sm:self-auto">
               Verified Original
             </span>
           </div>
         </header>
 
         {/* Featured Cover Image */}
-        <div className="relative aspect-[16/10] w-full rounded-3xl overflow-hidden shadow-soft-lg mb-12 border border-gold-hairline">
+        <div className="relative aspect-[16/10] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-soft-lg mb-8 sm:mb-12 border border-gold-hairline">
           <Image
             src={post.coverImage}
             alt={post.coverImageAlt || post.title}
@@ -215,12 +215,12 @@ export default async function BlogPostDetailPage({
         </div>
 
         {/* Share Buttons and Divider */}
-        <div className="mt-12 pt-6 pb-8 border-t border-b border-gold-hairline/70 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-10 sm:mt-12 pt-6 pb-8 border-t border-b border-gold-hairline/70 flex flex-col sm:flex-row items-center justify-between gap-4">
           <PostShareButtons title={post.title} slug={post.slug} />
 
           <Link
             href="/book"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-emerald-deep hover:bg-emerald-forest text-white text-xs sm:text-sm font-bold shadow-soft transition-all"
+            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-5 py-3 sm:py-2.5 rounded-xl bg-emerald-deep hover:bg-emerald-forest text-white text-xs sm:text-sm font-bold shadow-soft transition-all min-h-[44px]"
           >
             <CalendarBlank size={16} weight="bold" className="text-gold-light" />
             <span>Book Consultation</span>
@@ -229,11 +229,11 @@ export default async function BlogPostDetailPage({
 
         {/* Related Posts */}
         {relatedPosts.length > 0 && (
-          <div className="my-16">
-            <h3 className="text-2xl font-bold font-serif text-charcoal mb-6">
+          <div className="my-12 sm:my-16">
+            <h3 className="text-xl sm:text-2xl font-bold font-serif text-charcoal mb-6">
               Related Reminders &amp; Guidance
             </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
               {relatedPosts.map((rel) => (
                 <div
                   key={rel.id}

@@ -39,16 +39,16 @@ export function WhatsAppOrderDrawer() {
         aria-hidden="true"
       />
 
-      <div className="fixed inset-y-0 right-0 rtl:right-auto rtl:left-0 max-w-full flex pl-10 rtl:pl-0 rtl:pr-10">
-        <div className="w-screen max-w-md bg-ivory shadow-soft-lg flex flex-col border-l rtl:border-l-0 rtl:border-r border-gold-hairline animate-in slide-in-from-right rtl:slide-in-from-left duration-300">
+      <div className="fixed inset-y-0 right-0 rtl:right-auto rtl:left-0 max-w-full flex pl-0 sm:pl-10 rtl:pl-0 rtl:pr-0 rtl:sm:pr-10">
+        <div className="w-full sm:w-screen max-w-md bg-ivory shadow-soft-lg flex flex-col border-l rtl:border-l-0 rtl:border-r border-gold-hairline animate-in slide-in-from-right rtl:slide-in-from-left duration-300">
           {/* Header */}
-          <div className="p-5 border-b border-gold-hairline/60 bg-white/70 flex items-center justify-between">
+          <div className="p-4 sm:p-5 border-b border-gold-hairline/60 bg-white/70 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
               <span className="p-2 rounded-xl bg-emerald-light text-emerald-deep font-bold">
                 <WhatsappLogo size={22} weight="fill" />
               </span>
               <div>
-                <h2 className="text-lg font-bold font-serif text-charcoal">
+                <h2 className="text-base sm:text-lg font-bold font-serif text-charcoal">
                   {t("drawer", "title")}
                 </h2>
                 <p className="text-xs text-muted">
@@ -60,7 +60,7 @@ export function WhatsAppOrderDrawer() {
               type="button"
               id="close-order-drawer-btn"
               onClick={closeDrawer}
-              className="p-2 rounded-xl text-muted hover:text-charcoal hover:bg-cream transition-colors"
+              className="p-2 rounded-xl text-muted hover:text-charcoal hover:bg-cream transition-colors min-w-[40px] min-h-[40px] flex items-center justify-center"
               aria-label="Close drawer"
             >
               <X size={20} weight="bold" />
@@ -68,7 +68,7 @@ export function WhatsAppOrderDrawer() {
           </div>
 
           {/* Delivery banner */}
-          <div className="px-5 py-2.5 bg-emerald-deep text-white text-xs font-medium flex items-center gap-2">
+          <div className="px-4 sm:px-5 py-2.5 bg-emerald-deep text-white text-xs font-medium flex items-center gap-2">
             <Truck size={18} weight="fill" className="text-gold-light shrink-0" />
             <span>{t("drawer", "deliveryBanner")}</span>
           </div>
@@ -118,7 +118,7 @@ export function WhatsAppOrderDrawer() {
                         <button
                           type="button"
                           onClick={() => updateQuantity(product.id, quantity - 1)}
-                          className="p-1 text-gray-500 hover:text-charcoal hover:bg-gray-100 rounded-l-lg"
+                          className="p-1.5 sm:p-1 text-gray-500 hover:text-charcoal hover:bg-gray-100 rounded-l-lg min-w-[28px] min-h-[28px] flex items-center justify-center"
                           aria-label="Decrease quantity"
                         >
                           <Minus size={12} weight="bold" />
@@ -129,7 +129,7 @@ export function WhatsAppOrderDrawer() {
                         <button
                           type="button"
                           onClick={() => updateQuantity(product.id, quantity + 1)}
-                          className="p-1 text-gray-500 hover:text-charcoal hover:bg-gray-100 rounded-r-lg"
+                          className="p-1.5 sm:p-1 text-gray-500 hover:text-charcoal hover:bg-gray-100 rounded-r-lg min-w-[28px] min-h-[28px] flex items-center justify-center"
                           aria-label="Increase quantity"
                         >
                           <Plus size={12} weight="bold" />
@@ -138,7 +138,7 @@ export function WhatsAppOrderDrawer() {
                       <button
                         type="button"
                         onClick={() => removeItem(product.id)}
-                        className="p-1 text-gray-400 hover:text-crimson transition-colors"
+                        className="p-1.5 sm:p-1 text-gray-400 hover:text-crimson transition-colors min-w-[28px] min-h-[28px] flex items-center justify-center"
                         title={t("drawer", "remove")}
                         aria-label={`Remove ${product.name} from list`}
                       >
@@ -153,7 +153,7 @@ export function WhatsAppOrderDrawer() {
 
           {/* Footer CTA */}
           {items.length > 0 && (
-            <div className="p-5 border-t border-gold-hairline/60 bg-white/90 space-y-3">
+            <div className="p-4 sm:p-5 border-t border-gold-hairline/60 bg-white/95 space-y-3">
               <div className="flex items-start gap-2 text-[11px] text-muted">
                 <ShieldCheck size={16} weight="fill" className="text-emerald-deep shrink-0 mt-0.5" />
                 <span>{t("drawer", "note")}</span>
@@ -163,7 +163,7 @@ export function WhatsAppOrderDrawer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 id="drawer-whatsapp-checkout-btn"
-                className="w-full flex items-center justify-center gap-2.5 py-3.5 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-soft hover:shadow-soft-lg transition-all"
+                className="w-full flex items-center justify-center gap-2.5 py-3.5 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-soft hover:shadow-soft-lg transition-all active:scale-[0.98]"
               >
                 <WhatsappLogo size={20} weight="fill" />
                 <span>{t("drawer", "checkoutBtn")}</span>

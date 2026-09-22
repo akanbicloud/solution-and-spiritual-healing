@@ -22,13 +22,13 @@ export function Footer() {
   const { t } = useI18n();
 
   return (
-    <footer className="w-full bg-cream border-t border-gold-hairline pt-16 pb-12 transition-colors">
+    <footer className="w-full bg-cream border-t border-gold-hairline pt-12 sm:pt-16 pb-8 sm:pb-12 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 pb-12 border-b border-gold-hairline/60">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 pb-10 sm:pb-12 border-b border-gold-hairline/60">
           {/* Column 1: Brand Info */}
           <div className="space-y-4">
             <Link href="/" className="inline-block">
-              <div className="relative w-48 sm:w-56 h-12">
+              <div className="relative w-44 sm:w-56 h-11 sm:h-12">
                 <Image
                   src="/images/logo.svg"
                   alt="Solution Spiritual Healing & Prayer"
@@ -188,11 +188,11 @@ export function Footer() {
         </div>
 
         {/* Bottom Legal bar */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted text-center sm:text-left">
           <div>
             © {new Date().getFullYear()} {siteConfig.brand}. {t("footer", "rights")}
           </div>
-          <div className="flex items-center gap-6">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-4 sm:gap-6">
             <Link href="/privacy" className="hover:text-emerald-deep transition-colors">
               {t("footer", "privacy")}
             </Link>

@@ -80,10 +80,10 @@ export function Header() {
           {/* Brand Logo */}
           <Link
             href="/"
-            className="flex items-center gap-3 group focus:outline-none"
+            className="flex items-center gap-2 sm:gap-3 group focus:outline-none shrink-0"
             aria-label="Solution Spiritual Healing & Prayer — Home"
           >
-            <div className="relative w-44 sm:w-56 h-12 transition-transform duration-200 group-hover:scale-[1.02]">
+            <div className="relative w-36 sm:w-48 md:w-56 h-10 sm:h-12 transition-transform duration-200 group-hover:scale-[1.02]">
               <Image
                 src="/images/logo.svg"
                 alt="Solution Spiritual Healing & Prayer Logo"
@@ -115,7 +115,7 @@ export function Header() {
           </nav>
 
           {/* Right Action Icons & CTAs */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3">
             {/* Language Switcher */}
             <LanguageSwitcher />
 
@@ -124,7 +124,7 @@ export function Header() {
               type="button"
               id="header-order-drawer-btn"
               onClick={openDrawer}
-              className="relative p-2 rounded-full border border-gold-hairline bg-white/70 hover:bg-white text-charcoal hover:text-emerald-deep transition-all shadow-soft-sm focus:outline-none focus:ring-2 focus:ring-emerald-deep/30"
+              className="relative p-2 sm:p-2.5 rounded-full border border-gold-hairline bg-white/70 hover:bg-white text-charcoal hover:text-emerald-deep transition-all shadow-soft-sm focus:outline-none focus:ring-2 focus:ring-emerald-deep/30 min-w-[40px] min-h-[40px] flex items-center justify-center"
               aria-label="Open Order Drawer"
               title="View your WhatsApp order list"
             >
@@ -151,7 +151,7 @@ export function Header() {
               type="button"
               id="mobile-menu-toggle"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-xl border border-gold-hairline bg-white/80 text-charcoal hover:text-emerald-deep focus:outline-none"
+              className="lg:hidden p-2.5 rounded-xl border border-gold-hairline bg-white/80 text-charcoal hover:text-emerald-deep focus:outline-none min-w-[44px] min-h-[44px] flex items-center justify-center active:scale-95"
               aria-label="Toggle navigation menu"
             >
               {mobileMenuOpen ? <X size={20} weight="bold" /> : <List size={20} weight="bold" />}
@@ -164,7 +164,7 @@ export function Header() {
       {mobileMenuOpen && (
         <div
           id="mobile-nav-panel"
-          className="lg:hidden fixed inset-x-0 top-20 bg-ivory/95 backdrop-blur-xl border-b border-gold-hairline shadow-soft-lg px-4 pt-3 pb-6 animate-in slide-in-from-top-4 duration-200"
+          className="lg:hidden fixed inset-x-0 top-20 max-h-[calc(100vh-5rem)] overflow-y-auto bg-ivory/98 backdrop-blur-xl border-b border-gold-hairline shadow-soft-lg px-4 pt-3 pb-8 animate-in slide-in-from-top-4 duration-200"
         >
           <div className="flex flex-col gap-1">
             {navLinks.map((link) => {
@@ -174,7 +174,7 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`px-4 py-2.5 rounded-xl text-base font-medium transition-colors ${
+                  className={`px-4 py-3 rounded-xl text-base font-medium transition-colors ${
                     isActive
                       ? "bg-emerald-deep text-white font-semibold"
                       : "text-charcoal hover:bg-cream hover:text-emerald-deep"
@@ -184,11 +184,11 @@ export function Header() {
                 </Link>
               );
             })}
-            <div className="pt-3 mt-2 border-t border-gold-hairline/60 flex flex-col gap-2">
+            <div className="pt-3 mt-2 border-t border-gold-hairline/60 flex flex-col gap-2.5">
               <Link
                 href="/book"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-sm text-white bg-emerald-deep shadow-soft"
+                className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl font-semibold text-sm text-white bg-emerald-deep shadow-soft active:scale-[0.99]"
               >
                 <CalendarBlank size={18} weight="bold" className="text-gold-light" />
                 {t("nav", "bookCta")}
@@ -199,7 +199,7 @@ export function Header() {
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl font-semibold text-sm text-emerald-deep bg-emerald-light border border-emerald-deep/20"
+                className="w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-sm text-emerald-deep bg-emerald-light border border-emerald-deep/20 active:scale-[0.99]"
               >
                 <WhatsappLogo size={18} weight="fill" className="text-emerald-deep" />
                 Chat on WhatsApp

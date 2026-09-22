@@ -116,7 +116,7 @@ export function BookingForm({ initialService = "" }: { initialService?: string }
   // Success Screen
   if (successData) {
     return (
-      <div className="rounded-3xl bg-white border border-gold-hairline p-8 sm:p-12 shadow-soft-lg text-center max-w-2xl mx-auto animate-in zoom-in-95 duration-300">
+      <div className="rounded-3xl bg-white border border-gold-hairline p-5 sm:p-8 md:p-12 shadow-soft-lg text-center max-w-2xl mx-auto animate-in zoom-in-95 duration-300">
         <div className="w-16 h-16 rounded-full bg-emerald-light text-emerald-deep flex items-center justify-center mx-auto mb-6">
           <CheckCircle size={36} weight="fill" />
         </div>
@@ -141,7 +141,7 @@ export function BookingForm({ initialService = "" }: { initialService?: string }
             target="_blank"
             rel="noopener noreferrer"
             id="confirm-booking-whatsapp-btn"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-soft transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-soft transition-all min-h-[44px]"
           >
             <WhatsappLogo size={20} weight="fill" />
             <span>Confirm on WhatsApp</span>
@@ -149,7 +149,7 @@ export function BookingForm({ initialService = "" }: { initialService?: string }
 
           <a
             href={`tel:${siteConfig.phoneIntl}`}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-cream border border-gold-hairline text-charcoal font-bold text-sm shadow-soft-sm transition-all"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-white hover:bg-cream border border-gold-hairline text-charcoal font-bold text-sm shadow-soft-sm transition-all min-h-[44px]"
           >
             <Phone size={18} weight="fill" className="text-emerald-deep" />
             <span>Call Now: {siteConfig.phoneDisplay}</span>
@@ -162,7 +162,7 @@ export function BookingForm({ initialService = "" }: { initialService?: string }
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="rounded-3xl bg-white border border-gold-hairline/80 p-6 sm:p-10 shadow-soft-lg space-y-6 max-w-2xl mx-auto"
+      className="rounded-3xl bg-white border border-gold-hairline/80 p-4 sm:p-8 lg:p-10 shadow-soft-lg space-y-5 sm:space-y-6 max-w-2xl mx-auto"
     >
       {/* Honeypot hidden input */}
       <input
@@ -335,13 +335,13 @@ export function BookingForm({ initialService = "" }: { initialService?: string }
       </button>
 
       {/* Sanctuary Details */}
-      <div className="p-4 rounded-2xl bg-cream-light border border-gold-hairline/60 flex items-center justify-between gap-2 text-xs text-muted">
+      <div className="p-3.5 sm:p-4 rounded-2xl bg-cream-light border border-gold-hairline/60 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 text-xs text-muted">
         <span className="flex items-center gap-1.5">
-          <MapPin size={14} weight="fill" className="text-emerald-deep" />
+          <MapPin size={14} weight="fill" className="text-emerald-deep shrink-0" />
           Alfa Cairo House, Owode Egba
         </span>
         <span className="flex items-center gap-1.5">
-          <Clock size={14} weight="fill" className="text-emerald-deep" />
+          <Clock size={14} weight="fill" className="text-emerald-deep shrink-0" />
           Open All Days
         </span>
       </div>

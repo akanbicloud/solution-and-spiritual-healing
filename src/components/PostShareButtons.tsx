@@ -29,7 +29,7 @@ export function PostShareButtons({
   )}`;
 
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex flex-wrap items-center gap-2">
       <span className="text-xs font-semibold text-muted mr-1">Share:</span>
 
       {/* WhatsApp Share */}
@@ -37,7 +37,7 @@ export function PostShareButtons({
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#128C7E] text-xs font-bold transition-colors"
+        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#25D366]/10 hover:bg-[#25D366]/20 text-[#128C7E] text-xs font-bold transition-colors min-h-[36px]"
         title="Share to WhatsApp"
       >
         <WhatsappLogo size={16} weight="fill" />
@@ -49,7 +49,7 @@ export function PostShareButtons({
         href={facebookUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#1877F2]/10 hover:bg-[#1877F2]/20 text-[#1877F2] text-xs font-bold transition-colors"
+        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#1877F2]/10 hover:bg-[#1877F2]/20 text-[#1877F2] text-xs font-bold transition-colors min-h-[36px]"
         title="Share on Facebook"
       >
         <FacebookLogo size={16} weight="fill" />
@@ -60,7 +60,7 @@ export function PostShareButtons({
       <button
         type="button"
         onClick={copyUrl}
-        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gray-100 hover:bg-gray-200 text-charcoal text-xs font-bold transition-colors"
+        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gray-100 hover:bg-gray-200 text-charcoal text-xs font-bold transition-colors min-h-[36px]"
         title="Copy article link"
       >
         {copied ? (

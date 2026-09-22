@@ -84,17 +84,17 @@ export default async function HomePage() {
   return (
     <div className="w-full flex flex-col">
       {/* 1. LIGHT CINEMATIC HERO SECTION */}
-      <section className="relative overflow-hidden pt-12 pb-20 sm:pt-20 sm:pb-32 bg-gradient-to-b from-cream-light via-ivory to-white">
+      <section className="relative overflow-hidden pt-10 pb-16 sm:pt-20 sm:pb-32 bg-gradient-to-b from-cream-light via-ivory to-white">
         {/* Subtle Islamic Background Pattern with very low opacity */}
         <div className="absolute inset-0 bg-islamic-pattern opacity-5 pointer-events-none" />
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] bg-gradient-to-tr from-gold/10 via-emerald-deep/5 to-transparent rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] sm:w-[700px] h-[320px] sm:h-[500px] bg-gradient-to-tr from-gold/10 via-emerald-deep/5 to-transparent rounded-full blur-3xl pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
             {/* Left Content Column */}
             <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left rtl:lg:text-right">
               {/* Gold Eyebrow Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-gold-hairline shadow-soft-sm text-xs font-bold text-emerald-deep mb-6">
+              <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white border border-gold-hairline shadow-soft-sm text-xs font-bold text-emerald-deep mb-5 sm:mb-6">
                 <span className="w-2 h-2 rounded-full bg-crimson animate-pulse" />
                 <span className="uppercase tracking-widest text-[11px] text-gold-primary">
                   {settings.heroHeadline}
@@ -102,7 +102,7 @@ export default async function HomePage() {
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-serif text-charcoal tracking-tight leading-[1.15]">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold font-serif text-charcoal tracking-tight leading-[1.18] sm:leading-[1.15]">
                 Faith. Hope. Healing.{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-deep via-emerald-forest to-gold-primary">
                   Transformation.
@@ -110,21 +110,21 @@ export default async function HomePage() {
               </h1>
 
               {/* Sub-headline / Arabic Calligraphy Line */}
-              <div className="mt-3 font-arabic text-xl sm:text-2xl text-emerald-deep font-bold" dir="rtl">
+              <div className="mt-3 font-arabic text-lg sm:text-2xl text-emerald-deep font-bold" dir="rtl">
                 حلول الشفاء والدعاء • دار ألفا قاهرة
               </div>
 
               {/* Description */}
-              <p className="mt-4 text-base sm:text-lg text-muted max-w-xl leading-relaxed">
+              <p className="mt-4 text-sm sm:text-lg text-muted max-w-xl leading-relaxed">
                 {settings.heroDescription}
               </p>
 
               {/* CTA Buttons */}
-              <div className="mt-8 flex flex-col sm:flex-row items-center gap-3.5 w-full sm:w-auto">
+              <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center gap-3 sm:gap-3.5 w-full sm:w-auto">
                 <Link
                   href="/book"
                   id="hero-book-consultation-cta"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-emerald-deep hover:bg-emerald-forest text-white font-bold text-sm sm:text-base shadow-soft hover:shadow-soft-lg hover-lift transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-emerald-deep hover:bg-emerald-forest text-white font-bold text-sm sm:text-base shadow-soft hover:shadow-soft-lg hover-lift transition-all min-h-[48px]"
                 >
                   <CalendarBlank size={18} weight="bold" className="text-gold-light" />
                   <span>Book a Consultation</span>
@@ -137,7 +137,7 @@ export default async function HomePage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   id="hero-whatsapp-chat-cta"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl bg-white hover:bg-cream border border-gold-hairline text-emerald-deep font-bold text-sm sm:text-base shadow-soft-sm hover-lift transition-all"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-4 rounded-2xl bg-white hover:bg-cream border border-gold-hairline text-emerald-deep font-bold text-sm sm:text-base shadow-soft-sm hover-lift transition-all min-h-[48px]"
                 >
                   <WhatsappLogo size={18} weight="fill" className="text-emerald-600" />
                   <span>Chat on WhatsApp</span>
@@ -145,7 +145,7 @@ export default async function HomePage() {
               </div>
 
               {/* Hours reassurance */}
-              <div className="mt-6 flex items-center gap-2 text-xs text-muted">
+              <div className="mt-5 sm:mt-6 flex items-center gap-2 text-xs text-muted">
                 <Clock size={15} weight="fill" className="text-emerald-deep" />
                 <span>{siteConfig.hours} • Alfa Cairo House, Owode Egba</span>
               </div>
@@ -581,12 +581,12 @@ export default async function HomePage() {
                 </div>
               </div>
 
-              <div className="pt-2 flex items-center gap-3">
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <a
                   href={siteConfig.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl bg-emerald-deep hover:bg-emerald-forest text-white font-bold text-xs sm:text-sm shadow-soft transition-all hover-lift"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-2xl bg-emerald-deep hover:bg-emerald-forest text-white font-bold text-xs sm:text-sm shadow-soft transition-all hover-lift min-h-[44px]"
                 >
                   <MapPin size={16} weight="fill" className="text-gold-light" />
                   <span>Get Directions on Google Maps</span>
@@ -595,7 +595,7 @@ export default async function HomePage() {
             </div>
 
             <div className="lg:col-span-7">
-              <div className="relative w-full h-[360px] sm:h-[420px] rounded-3xl overflow-hidden shadow-soft-lg border-2 border-gold/40">
+              <div className="relative w-full h-[280px] sm:h-[360px] md:h-[420px] rounded-3xl overflow-hidden shadow-soft-lg border-2 border-gold/40">
                 <iframe
                   title="Alfa Cairo House Location Map"
                   src={siteConfig.googleMapsEmbed}
@@ -617,29 +617,29 @@ export default async function HomePage() {
       <WhatsAppGroupBanner />
 
       {/* 12. FINAL CALL-TO-ACTION SECTION */}
-      <section className="py-20 bg-gradient-to-br from-emerald-deep via-emerald-forest to-emerald-dark text-white relative overflow-hidden">
+      <section className="py-14 sm:py-20 bg-gradient-to-br from-emerald-deep via-emerald-forest to-emerald-dark text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-islamic-pattern opacity-10 pointer-events-none" />
         <div className="relative max-w-4xl mx-auto px-4 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-gold-light text-xs font-bold uppercase tracking-widest mb-4 border border-gold/30">
+          <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white/10 text-gold-light text-xs font-bold uppercase tracking-widest mb-4 border border-gold/30">
             Take The First Step Today
           </div>
-          <h2 className="text-3xl sm:text-5xl font-bold font-serif text-white tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold font-serif text-white tracking-tight leading-tight">
             Your Healing &amp; Breakthrough Is One Prayer Away
           </h2>
-          <p className="mt-4 text-sm sm:text-lg text-emerald-100 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 sm:mt-4 text-xs sm:text-lg text-emerald-100 max-w-2xl mx-auto leading-relaxed">
             Reach out in complete confidence. Whether you need spiritual direction, Ruqyah prayers, or traditional herbal wellness, Alfacairo is here to support you.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
             <Link
               href="/book"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-gold hover:bg-gold-light text-charcoal font-bold text-sm sm:text-base shadow-soft hover-lift transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-gold hover:bg-gold-light text-charcoal font-bold text-sm sm:text-base shadow-soft hover-lift transition-all min-h-[48px]"
             >
               <CalendarBlank size={18} weight="bold" className="text-charcoal" />
               <span>Book Your Consultation</span>
             </Link>
             <a
               href={`tel:${siteConfig.phoneIntl}`}
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold text-sm sm:text-base transition-all"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold text-sm sm:text-base transition-all min-h-[48px]"
             >
               <Phone size={18} weight="fill" className="text-gold-light" />
               <span>Call {siteConfig.phoneDisplay}</span>

@@ -13,7 +13,7 @@ export function ProductCard({ product }: { product: Product }) {
   const { t } = useI18n();
 
   return (
-    <div className="group relative flex flex-col rounded-3xl bg-white border border-gold-hairline/70 p-5 shadow-soft hover:shadow-soft-lg transition-all duration-300 hover-lift">
+    <div className="group relative flex flex-col rounded-3xl bg-white border border-gold-hairline/70 p-4 sm:p-5 shadow-soft hover:shadow-soft-lg transition-all duration-300 hover-lift">
       {/* Product Image Container */}
       <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-cream-light mb-4 border border-gold-hairline/30">
         <Image
@@ -23,7 +23,6 @@ export function ProductCard({ product }: { product: Product }) {
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
-
 
         {/* Category Pill */}
         <div className="absolute top-3 right-3 rtl:right-auto rtl:left-3">
@@ -52,7 +51,7 @@ export function ProductCard({ product }: { product: Product }) {
             type="button"
             id={`add-to-cart-${product.slug}`}
             onClick={() => addItem(product)}
-            className="w-full sm:flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl border border-emerald-deep/30 bg-emerald-light/50 hover:bg-emerald-light text-emerald-deep text-xs font-bold transition-colors active:scale-95"
+            className="w-full sm:flex-1 inline-flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl border border-emerald-deep/30 bg-emerald-light/50 hover:bg-emerald-light text-emerald-deep text-xs font-bold transition-colors active:scale-95 min-h-[40px]"
             title="Add to WhatsApp multi-product order list"
           >
             <Plus size={14} weight="bold" />
@@ -65,7 +64,7 @@ export function ProductCard({ product }: { product: Product }) {
             target="_blank"
             rel="noopener noreferrer"
             id={`order-wa-${product.slug}`}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 py-2.5 px-3.5 rounded-xl bg-emerald-deep hover:bg-emerald-forest text-white text-xs font-bold shadow-soft-sm transition-all active:scale-95 shrink-0"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 py-2.5 px-3.5 rounded-xl bg-emerald-deep hover:bg-emerald-forest text-white text-xs font-bold shadow-soft-sm transition-all active:scale-95 shrink-0 min-h-[40px]"
             title="Order directly on WhatsApp"
           >
             <WhatsappLogo size={16} weight="fill" className="text-gold-light" />

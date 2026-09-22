@@ -44,30 +44,30 @@ Come with your beautiful intentions — Success is your portion, protection is y
   return (
     <section
       id="weekly-prayer-session"
-      className="relative overflow-hidden py-16 sm:py-24 bg-gradient-to-b from-cream via-sand-50/70 to-ivory border-y border-gold-hairline/80"
+      className="relative overflow-hidden py-12 sm:py-24 bg-gradient-to-b from-cream via-sand-50/70 to-ivory border-y border-gold-hairline/80"
     >
       {/* Decorative Glow Elements */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-emerald-deep/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-gold/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-1/4 w-72 sm:w-96 h-72 sm:h-96 bg-emerald-deep/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Top Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-crimson/10 border border-crimson/20 text-crimson text-xs font-bold uppercase tracking-widest mb-4 animate-pulse">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
+          <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-crimson/10 border border-crimson/20 text-crimson text-xs font-bold uppercase tracking-widest mb-4 animate-pulse">
             <span className="w-2.5 h-2.5 rounded-full bg-crimson inline-block animate-ping" />
             <Broadcast size={16} weight="bold" />
             <span>Weekly Live Gathering • Every Wednesday 10:00 PM</span>
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-bold font-serif text-charcoal tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold font-serif text-charcoal tracking-tight leading-tight">
             An-Najaat Wa Tahseenaat
           </h2>
 
-          <div className="mt-2 font-arabic text-2xl sm:text-3xl text-emerald-deep font-bold" dir="rtl">
+          <div className="mt-2 font-arabic text-xl sm:text-2xl lg:text-3xl text-emerald-deep font-bold" dir="rtl">
             النجاة والتحصينات • دعاء النجاح والحفظ الإلهي
           </div>
 
-          <p className="mt-3 text-sm sm:text-base text-muted max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 text-xs sm:text-base text-muted max-w-2xl mx-auto leading-relaxed">
             Weekly live spiritual gathering for breakthrough, divine shielding from negative energy, and experiencing answered prayers under the guidance of Sheikh Ismail Adewunmi (Alfacairo).
           </p>
         </div>
@@ -210,12 +210,12 @@ Come with your beautiful intentions — Success is your portion, protection is y
               </div>
 
               {/* Quick Copy & Share Bar */}
-              <div className="flex flex-wrap items-center justify-between gap-3 text-xs text-muted pt-1">
-                <div className="flex items-center gap-2">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs text-muted pt-1">
+                <div className="flex flex-wrap items-center gap-2 w-full sm:w-auto">
                   <button
                     type="button"
                     onClick={handleCopy}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cream hover:bg-cream-light border border-gold-hairline text-charcoal font-semibold transition-colors"
+                    className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 py-2 sm:py-1.5 rounded-lg bg-cream hover:bg-cream-light border border-gold-hairline text-charcoal font-semibold transition-colors min-h-[38px] sm:min-h-auto"
                   >
                     {copied ? (
                       <>
@@ -234,7 +234,7 @@ Come with your beautiful intentions — Success is your portion, protection is y
                     href={whatsappShareUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-cream hover:bg-cream-light border border-gold-hairline text-charcoal font-semibold transition-colors"
+                    className="flex-1 sm:flex-initial inline-flex items-center justify-center gap-1.5 px-3 py-2 sm:py-1.5 rounded-lg bg-cream hover:bg-cream-light border border-gold-hairline text-charcoal font-semibold transition-colors min-h-[38px] sm:min-h-auto"
                   >
                     <ShareNetwork size={14} weight="bold" className="text-emerald-deep" />
                     <span>Share on WhatsApp</span>

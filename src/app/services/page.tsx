@@ -105,42 +105,42 @@ const services = [
 
 export default function ServicesPage() {
   return (
-    <div className="w-full flex flex-col py-12 sm:py-16">
+    <div className="w-full flex flex-col py-8 sm:py-16">
       {/* Header Banner */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-light border border-emerald-deep/20 text-emerald-deep text-xs font-bold uppercase tracking-wider mb-4">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-16 text-center">
+        <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-emerald-light border border-emerald-deep/20 text-emerald-deep text-xs font-bold uppercase tracking-wider mb-4">
           <Sparkle size={14} weight="fill" className="text-gold" />
           Compassionate Spiritual Counselling
         </div>
-        <h1 className="text-4xl sm:text-5xl font-bold font-serif text-charcoal tracking-tight">
+        <h1 className="text-3xl sm:text-5xl font-bold font-serif text-charcoal tracking-tight">
           Our Spiritual Services
         </h1>
-        <p className="mt-4 text-base sm:text-lg text-muted max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-3 sm:mt-4 text-sm sm:text-lg text-muted max-w-2xl mx-auto leading-relaxed">
           Rooted in prophetic supplication, Quranic remembrance, and time-honored traditional remedies. We guide you through life’s seasons with compassion, humility, and prayer.
         </p>
       </section>
 
       {/* Services Detailed Cards */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((svc) => {
             const IconComp = svc.icon;
             return (
               <div
                 key={svc.id}
                 id={svc.id}
-                className="rounded-3xl bg-white border border-gold-hairline/80 p-8 shadow-soft hover:shadow-soft-lg hover-lift transition-all flex flex-col justify-between"
+                className="rounded-3xl bg-white border border-gold-hairline/80 p-5 sm:p-8 shadow-soft hover:shadow-soft-lg hover-lift transition-all flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-14 h-14 rounded-2xl bg-emerald-light text-emerald-deep flex items-center justify-center mb-6 border border-emerald-deep/20">
-                    <IconComp size={28} weight="fill" />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-emerald-light text-emerald-deep flex items-center justify-center mb-5 sm:mb-6 border border-emerald-deep/20">
+                    <IconComp size={26} weight="fill" />
                   </div>
 
-                  <h2 className="text-xl font-bold font-serif text-charcoal mb-3">
+                  <h2 className="text-lg sm:text-xl font-bold font-serif text-charcoal mb-2.5 sm:mb-3">
                     {svc.title}
                   </h2>
 
-                  <p className="text-sm text-muted leading-relaxed mb-6">
+                  <p className="text-xs sm:text-sm text-muted leading-relaxed mb-5 sm:mb-6">
                     {svc.shortDesc}
                   </p>
 
@@ -154,10 +154,10 @@ export default function ServicesPage() {
                   </div>
                 </div>
 
-                <div className="mt-8 pt-6 border-t border-gold-hairline/50 flex items-center gap-3">
+                <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-gold-hairline/50 flex items-center gap-2.5 sm:gap-3">
                   <Link
                     href={`/book?service=${encodeURIComponent(svc.title)}`}
-                    className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-deep hover:bg-emerald-forest text-white text-xs sm:text-sm font-bold shadow-soft transition-all"
+                    className="flex-1 inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-emerald-deep hover:bg-emerald-forest text-white text-xs sm:text-sm font-bold shadow-soft transition-all min-h-[44px]"
                   >
                     <CalendarBlank size={16} weight="bold" className="text-gold-light" />
                     <span>Book Guidance</span>
@@ -169,7 +169,7 @@ export default function ServicesPage() {
                     )}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 rounded-xl bg-white hover:bg-cream border border-gold-hairline text-emerald-deep transition-colors"
+                    className="p-3 rounded-xl bg-white hover:bg-cream border border-gold-hairline text-emerald-deep transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
                     aria-label={`Inquire about ${svc.title} on WhatsApp`}
                     title="Inquire on WhatsApp"
                   >
@@ -184,24 +184,24 @@ export default function ServicesPage() {
 
       {/* Reassurance Banner */}
       <section className="max-w-4xl mx-auto px-4 mb-16">
-        <div className="p-8 rounded-3xl bg-cream border border-gold-hairline/70 text-center space-y-4">
-          <h3 className="text-2xl font-bold font-serif text-charcoal">
+        <div className="p-5 sm:p-8 rounded-3xl bg-cream border border-gold-hairline/70 text-center space-y-4">
+          <h3 className="text-xl sm:text-2xl font-bold font-serif text-charcoal">
             Our Commitment to Spiritual Integrity
           </h3>
-          <p className="text-sm text-muted max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm text-muted max-w-2xl mx-auto leading-relaxed">
             We do not manufacture miracles or make extravagant guarantees. Spiritual counsel is an act of sincere faith and supplication, trusting in God’s supreme decree while applying lawful traditional wellness remedies.
           </p>
-          <div className="pt-2 flex flex-wrap justify-center gap-4">
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
             <Link
               href="/book"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-deep text-white text-xs sm:text-sm font-bold shadow-soft"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-emerald-deep text-white text-xs sm:text-sm font-bold shadow-soft min-h-[44px]"
             >
               <span>Schedule In-Person or Phone Session</span>
               <ArrowRight size={14} weight="bold" className="rtl:rotate-180" />
             </Link>
             <a
               href={`tel:${siteConfig.phoneIntl}`}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white border border-gold-hairline text-charcoal text-xs sm:text-sm font-bold shadow-soft-sm"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white border border-gold-hairline text-charcoal text-xs sm:text-sm font-bold shadow-soft-sm min-h-[44px]"
             >
               <Phone size={16} weight="fill" className="text-emerald-deep" />
               <span>Call {siteConfig.phoneDisplay}</span>

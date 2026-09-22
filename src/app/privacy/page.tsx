@@ -11,13 +11,13 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="py-12 sm:py-16 bg-sand-50/40">
+    <div className="py-8 sm:py-16 bg-sand-50/40">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Link */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-emerald-deep hover:underline"
+            className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-emerald-deep hover:underline py-1.5"
           >
             <ArrowLeft size={16} weight="bold" />
             <span>Back to Home</span>
@@ -25,21 +25,21 @@ export default function PrivacyPage() {
         </div>
 
         {/* Header */}
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-gold-hairline/60 shadow-soft mb-8">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-12 border border-gold-hairline/60 shadow-soft mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-light/60 text-emerald-deep text-xs font-semibold uppercase tracking-wider mb-4">
             <ShieldCheck size={16} weight="fill" />
             <span>Data Protection & Confidentiality</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-serif font-bold text-charcoal tracking-tight mb-4">
+          <h1 className="text-2xl sm:text-4xl font-serif font-bold text-charcoal tracking-tight mb-4">
             Privacy Policy
           </h1>
-          <p className="text-sm text-muted">
+          <p className="text-xs sm:text-sm text-muted">
             Last Updated: September 2026 • Compliant with the Nigeria Data Protection Act (NDPA) and NDPR
           </p>
         </div>
 
         {/* Content */}
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-gold-hairline/60 shadow-soft space-y-8 text-sm sm:text-base text-charcoal/80 leading-relaxed">
+        <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-12 border border-gold-hairline/60 shadow-soft space-y-8 text-sm sm:text-base text-charcoal/80 leading-relaxed">
           <section className="space-y-3">
             <h2 className="text-xl font-serif font-bold text-charcoal flex items-center gap-2">
               <LockKey size={20} weight="fill" className="text-emerald-deep" />
@@ -121,12 +121,12 @@ export default function PrivacyPage() {
               For any questions regarding this Privacy Policy or your personal information, please reach out to us directly:
             </p>
             <div className="space-y-2 text-muted">
-              <div className="flex items-center gap-2">
-                <EnvelopeSimple size={18} weight="fill" className="text-emerald-deep" />
-                <span>Email: contact@alfacairoprayer.com / alfacairo01@gmail.com</span>
+              <div className="flex items-start sm:items-center gap-2">
+                <EnvelopeSimple size={18} weight="fill" className="text-emerald-deep shrink-0 mt-0.5 sm:mt-0" />
+                <span className="break-all sm:break-normal">Email: contact@alfacairoprayer.com / alfacairo01@gmail.com</span>
               </div>
               <div className="flex items-center gap-2">
-                <Phone size={18} weight="fill" className="text-emerald-deep" />
+                <Phone size={18} weight="fill" className="text-emerald-deep shrink-0" />
                 <span>Phone / WhatsApp: {siteConfig.phoneDisplay}</span>
               </div>
               <p className="mt-2 text-xs">

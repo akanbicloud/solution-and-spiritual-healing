@@ -74,7 +74,7 @@ export default async function ProductDetailPage({
   };
 
   return (
-    <div className="w-full flex flex-col py-10 sm:py-16">
+    <div className="w-full flex flex-col py-6 sm:py-16">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
@@ -82,10 +82,10 @@ export default async function ProductDetailPage({
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Back Link */}
-        <div className="mb-8">
+        <div className="mb-6 sm:mb-8">
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 text-xs font-bold text-muted hover:text-emerald-deep transition-colors"
+            className="inline-flex items-center gap-2 text-xs font-bold text-muted hover:text-emerald-deep transition-colors min-h-[36px]"
           >
             <ArrowLeft size={16} weight="bold" className="rtl:rotate-180" />
             <span>Back to All Products</span>
@@ -93,8 +93,8 @@ export default async function ProductDetailPage({
         </div>
 
         {/* Main Product Showcase Card */}
-        <div className="bg-white rounded-3xl border border-gold-hairline/80 shadow-soft-lg p-6 sm:p-10 lg:p-12 mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        <div className="bg-white rounded-3xl border border-gold-hairline/80 shadow-soft-lg p-4 sm:p-10 lg:p-12 mb-12 sm:mb-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
             {/* Left Image View */}
             <div className="lg:col-span-6 flex justify-center">
               <div className="relative w-full max-w-lg aspect-square rounded-3xl overflow-hidden bg-cream-light border border-gold-hairline/50 shadow-soft">
@@ -109,22 +109,22 @@ export default async function ProductDetailPage({
             </div>
 
             {/* Right Product Information */}
-            <div className="lg:col-span-6 flex flex-col space-y-6">
+            <div className="lg:col-span-6 flex flex-col space-y-5 sm:space-y-6">
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-light border border-emerald-deep/20 text-emerald-deep text-xs font-bold uppercase tracking-wider mb-3">
                   <Sparkle size={14} weight="fill" className="text-gold" />
                   {product.category}
                 </div>
-                <h1 className="text-3xl sm:text-4xl font-bold font-serif text-charcoal tracking-tight">
+                <h1 className="text-2xl sm:text-4xl font-bold font-serif text-charcoal tracking-tight">
                   {product.name}
                 </h1>
-                <p className="mt-3 text-base sm:text-lg text-emerald-deep font-medium leading-relaxed">
+                <p className="mt-2.5 sm:mt-3 text-sm sm:text-lg text-emerald-deep font-medium leading-relaxed">
                   {product.shortDescription}
                 </p>
               </div>
 
               {/* Delivery info chip */}
-              <div className="p-4 rounded-2xl bg-cream-light border border-gold-hairline/60 flex items-center gap-3">
+              <div className="p-3.5 sm:p-4 rounded-2xl bg-cream-light border border-gold-hairline/60 flex items-center gap-3">
                 <Truck size={22} weight="fill" className="text-emerald-deep shrink-0" />
                 <div className="text-xs sm:text-sm text-charcoal">
                   <strong>Nationwide Delivery: </strong>
@@ -139,7 +139,7 @@ export default async function ProductDetailPage({
                   target="_blank"
                   rel="noopener noreferrer"
                   id="product-detail-wa-btn"
-                  className="w-full sm:flex-1 inline-flex items-center justify-center gap-2 py-4 px-6 rounded-2xl bg-emerald-deep hover:bg-emerald-forest text-white font-bold text-sm shadow-soft hover:shadow-soft-lg transition-all active:scale-95"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3.5 sm:py-4 px-6 rounded-2xl bg-emerald-deep hover:bg-emerald-forest text-white font-bold text-sm shadow-soft hover:shadow-soft-lg transition-all active:scale-95 min-h-[48px]"
                 >
                   <WhatsappLogo size={20} weight="fill" className="text-gold-light" />
                   <span>Order Directly on WhatsApp</span>

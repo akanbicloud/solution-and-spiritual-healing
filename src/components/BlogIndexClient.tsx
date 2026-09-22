@@ -46,8 +46,8 @@ export function BlogIndexClient({ posts }: { posts: Post[] }) {
   return (
     <div className="w-full">
       {/* Category Pills & Search */}
-      <div className="bg-white rounded-3xl border border-gold-hairline/70 p-4 sm:p-6 shadow-soft mb-12 flex flex-col lg:flex-row items-center justify-between gap-6">
-        <div className="flex flex-wrap items-center gap-2 w-full lg:w-auto">
+      <div className="bg-white rounded-3xl border border-gold-hairline/70 p-4 sm:p-6 shadow-soft mb-8 sm:mb-12 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 sm:gap-6">
+        <div className="flex items-center gap-2 w-full lg:w-auto overflow-x-auto pb-1.5 lg:pb-0 lg:flex-wrap">
           {categories.map((cat) => {
             const isSelected = selectedCategory === cat;
             return (
@@ -55,7 +55,7 @@ export function BlogIndexClient({ posts }: { posts: Post[] }) {
                 key={cat}
                 type="button"
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+                className={`px-3.5 sm:px-4 py-2 rounded-xl text-xs font-bold transition-all shrink-0 min-h-[38px] flex items-center ${
                   isSelected
                     ? "bg-emerald-deep text-white shadow-soft"
                     : "bg-cream-light text-charcoal hover:bg-cream border border-gold-hairline/40"
@@ -74,7 +74,7 @@ export function BlogIndexClient({ posts }: { posts: Post[] }) {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search articles and duas..."
-            className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-cream-light border border-gold-hairline text-xs font-medium text-charcoal placeholder-muted focus:outline-none focus:ring-2 focus:ring-emerald-deep/40 focus:bg-white"
+            className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-cream-light border border-gold-hairline text-xs font-medium text-charcoal placeholder-muted focus:outline-none focus:ring-2 focus:ring-emerald-deep/40 focus:bg-white min-h-[42px]"
           />
           <MagnifyingGlass size={16} weight="bold" className="text-muted absolute left-3 top-1/2 -translate-y-1/2 rtl:left-auto rtl:right-3" />
         </div>
@@ -133,9 +133,9 @@ export function BlogIndexClient({ posts }: { posts: Post[] }) {
                     </div>
                   </div>
 
-                  <div className="lg:col-span-5 p-6 sm:p-10 flex flex-col justify-between">
+                  <div className="lg:col-span-5 p-5 sm:p-8 lg:p-10 flex flex-col justify-between">
                     <div>
-                      <div className="flex items-center gap-3 text-xs text-muted mb-3">
+                      <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs text-muted mb-3">
                         <span className="font-semibold text-emerald-deep">
                           {featuredPost.category}
                         </span>
@@ -155,21 +155,21 @@ export function BlogIndexClient({ posts }: { posts: Post[] }) {
                         </span>
                       </div>
 
-                      <h2 className="text-2xl sm:text-3xl font-bold font-serif text-charcoal group-hover:text-emerald-deep transition-colors leading-tight mb-4">
+                      <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold font-serif text-charcoal group-hover:text-emerald-deep transition-colors leading-tight mb-3 sm:mb-4">
                         <Link href={`/blog/${featuredPost.slug}`}>
                           {featuredPost.title}
                         </Link>
                       </h2>
 
-                      <p className="text-sm sm:text-base text-muted leading-relaxed line-clamp-4">
+                      <p className="text-xs sm:text-base text-muted leading-relaxed line-clamp-3 sm:line-clamp-4">
                         {featuredPost.excerpt}
                       </p>
                     </div>
 
-                    <div className="mt-8 pt-6 border-t border-gold-hairline/60">
+                    <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gold-hairline/60">
                       <Link
                         href={`/blog/${featuredPost.slug}`}
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-emerald-deep hover:bg-emerald-forest text-white font-bold text-xs sm:text-sm shadow-soft transition-all"
+                        className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-emerald-deep hover:bg-emerald-forest text-white font-bold text-xs sm:text-sm shadow-soft transition-all w-full sm:w-auto min-h-[40px]"
                       >
                         <span>Read Full Guide</span>
                         <ArrowRight size={14} weight="bold" className="rtl:rotate-180" />
