@@ -2,7 +2,6 @@ import React from "react";
 import { getProducts } from "@/lib/cms";
 import { ProductCatalog } from "@/components/ProductCatalog";
 import { WhatsAppGroupBanner } from "@/components/WhatsAppGroupBanner";
-import { Sparkle } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,7 +21,6 @@ export default async function ProductsPage() {
       {/* Header Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-12 text-center">
         <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-emerald-light border border-emerald-deep/20 text-emerald-deep text-xs font-bold uppercase tracking-wider mb-4">
-          <Sparkle size={14} weight="fill" className="text-gold" />
           Traditional Herbal Dispensary
         </div>
         <h1 className="text-3xl sm:text-5xl font-bold font-serif text-charcoal tracking-tight">

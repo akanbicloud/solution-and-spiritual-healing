@@ -12,7 +12,6 @@ import {
   ShareNetwork,
   Copy,
   Check,
-  Sparkle,
   ArrowUpRight,
   ShieldCheck,
   Heart,
@@ -54,8 +53,6 @@ Come with your beautiful intentions — Success is your portion, protection is y
         {/* Section Top Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-crimson/10 border border-crimson/20 text-crimson text-xs font-bold uppercase tracking-widest mb-4 animate-pulse">
-            <span className="w-2.5 h-2.5 rounded-full bg-crimson inline-block animate-ping" />
-            <Broadcast size={16} weight="bold" />
             <span>Weekly Live Gathering • Every Wednesday 10:00 PM</span>
           </div>
 
@@ -107,7 +104,6 @@ Come with your beautiful intentions — Success is your portion, protection is y
             <div className="space-y-5">
               {/* Salutation / Friendly Hook */}
               <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-gold-primary">
-                <Sparkle size={16} weight="fill" className="text-gold" />
                 <span>You Are Warmly Invited • Tonight’s The Night!</span>
               </div>
 

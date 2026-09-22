@@ -2,7 +2,7 @@ import React from "react";
 import { getPosts } from "@/lib/cms";
 import { BlogIndexClient } from "@/components/BlogIndexClient";
 import { WhatsAppGroupBanner } from "@/components/WhatsAppGroupBanner";
-import { Sparkle, Rss } from "@phosphor-icons/react/dist/ssr";
+import { Rss } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -22,7 +22,6 @@ export default async function BlogPage() {
       {/* Header Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-12 text-center">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-light border border-emerald-deep/20 text-emerald-deep text-xs font-bold uppercase tracking-wider mb-4">
-          <Sparkle size={14} weight="fill" className="text-gold" />
           Spiritual Reflections &amp; Guidance
         </div>
         <h1 className="text-3xl sm:text-5xl font-bold font-serif text-charcoal tracking-tight">

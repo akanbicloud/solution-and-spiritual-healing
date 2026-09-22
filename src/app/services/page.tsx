@@ -112,7 +112,6 @@ export default function ServicesPage() {
       {/* Header Banner */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-16 text-center">
         <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-emerald-light border border-emerald-deep/20 text-emerald-deep text-xs font-bold uppercase tracking-wider mb-4">
-          <Sparkle size={14} weight="fill" className="text-gold" />
           Compassionate Spiritual Counselling
         </div>
         <h1 className="text-3xl sm:text-5xl font-bold font-serif text-charcoal tracking-tight">

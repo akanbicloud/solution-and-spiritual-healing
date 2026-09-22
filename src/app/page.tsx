@@ -95,7 +95,6 @@ export default async function HomePage() {
             <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left rtl:lg:text-right">
               {/* Gold Eyebrow Badge */}
               <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-white border border-gold-hairline shadow-soft-sm text-xs font-bold text-emerald-deep mb-5 sm:mb-6">
-                <span className="w-2 h-2 rounded-full bg-crimson animate-pulse" />
                 <span className="uppercase tracking-widest text-[11px] text-gold-primary">
                   {settings.heroHeadline}
                 </span>
@@ -223,7 +222,6 @@ export default async function HomePage() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-light border border-emerald-deep/20 text-emerald-deep text-xs font-bold uppercase tracking-wider mb-3">
-                <Sparkle size={14} weight="fill" className="text-gold" />
                 Featured Preparations
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold font-serif text-charcoal tracking-tight">
@@ -283,7 +281,6 @@ export default async function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-light border border-emerald-deep/20 text-emerald-deep text-xs font-bold uppercase tracking-wider mb-3">
-              <Compass size={14} weight="fill" className="text-gold" />
               Spiritual Counselling
             </div>
             <h2 className="text-3xl sm:text-4xl font-bold font-serif text-charcoal tracking-tight">
@@ -348,7 +345,6 @@ export default async function HomePage() {
             {/* Bio Content Column */}
             <div className="lg:col-span-7 space-y-5">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-gold-hairline text-emerald-deep text-xs font-bold uppercase tracking-wider">
-                <Sparkle size={14} weight="fill" className="text-gold" />
                 About Alfacairo
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold font-serif text-charcoal tracking-tight">
@@ -555,7 +551,6 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-5 space-y-4">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white border border-gold-hairline text-emerald-deep text-xs font-bold uppercase tracking-wider">
-                <MapPin size={14} weight="fill" className="text-gold" />
                 Sanctuary Location
               </div>
               <h2 className="text-3xl sm:text-4xl font-bold font-serif text-charcoal tracking-tight">

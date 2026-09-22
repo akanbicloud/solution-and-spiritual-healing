@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ShieldCheck, LockKey, EnvelopeSimple, Phone, ArrowLeft } from "@phosphor-icons/react/dist/ssr";
+import { LockKey, EnvelopeSimple, Phone, ArrowLeft } from "@phosphor-icons/react/dist/ssr";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -30,7 +30,6 @@ export default function PrivacyPage() {
         {/* Header */}
         <div className="bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-12 border border-gold-hairline/60 shadow-soft mb-6 sm:mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-light/60 text-emerald-deep text-xs font-semibold uppercase tracking-wider mb-4">
-            <ShieldCheck size={16} weight="fill" />
             <span>Data Protection & Confidentiality</span>
           </div>
           <h1 className="text-2xl sm:text-4xl font-serif font-bold text-charcoal tracking-tight mb-4">

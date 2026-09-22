@@ -5,7 +5,6 @@ import { getSiteSettings } from "@/lib/cms";
 import { siteConfig } from "@/config/site";
 import { WhatsAppGroupBanner } from "@/components/WhatsAppGroupBanner";
 import {
-  Sparkle,
   CalendarBlank,
   WhatsappLogo,
   MapPin,
@@ -34,7 +33,6 @@ export default async function AboutPage() {
       {/* Hero Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-16 text-center">
         <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-emerald-light border border-emerald-deep/20 text-emerald-deep text-xs font-bold uppercase tracking-wider mb-4">
-          <Sparkle size={14} weight="fill" className="text-gold" />
           Spiritual Leadership &amp; Calling
         </div>
         <h1 className="text-3xl sm:text-5xl font-bold font-serif text-charcoal tracking-tight">
@@ -157,7 +155,6 @@ export default async function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-6 space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gold-hairline text-emerald-deep text-xs font-bold uppercase tracking-wider">
-                <MapPin size={14} weight="fill" className="text-gold" />
                 Alfa Cairo House
               </div>
               <h2 className="text-3xl font-bold font-serif text-charcoal tracking-tight">

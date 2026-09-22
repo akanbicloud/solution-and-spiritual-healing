@@ -11,7 +11,6 @@ import {
   CalendarBlank,
   Clock,
   ArrowLeft,
-  Sparkle,
   Quotes,
   Globe,
   ArrowRight,
@@ -111,7 +110,6 @@ export default async function BlogPostDetailPage({
         {/* Article Header */}
         <header className="mb-8 text-center sm:text-left rtl:sm:text-right">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-light border border-emerald-deep/20 text-emerald-deep text-xs font-bold uppercase tracking-wider mb-4">
-            <Sparkle size={13} weight="fill" className="text-gold" />
             {post.category}
           </div>
 

@@ -7,11 +7,9 @@ import { siteConfig } from "@/config/site";
 import { ProductCard } from "@/components/ProductCard";
 import { WhatsAppGroupBanner } from "@/components/WhatsAppGroupBanner";
 import {
-  ShieldCheck,
   Truck,
   WhatsappLogo,
   ArrowLeft,
-  Sparkle,
   CheckCircle,
   Clock,
 } from "@phosphor-icons/react/dist/ssr";
@@ -122,7 +120,6 @@ export default async function ProductDetailPage({
             <div className="lg:col-span-6 flex flex-col space-y-5 sm:space-y-6">
               <div>
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-light border border-emerald-deep/20 text-emerald-deep text-xs font-bold uppercase tracking-wider mb-3">
-                  <Sparkle size={14} weight="fill" className="text-gold" />
                   {product.category}
                 </div>
                 <h1 className="text-2xl sm:text-4xl font-bold font-serif text-charcoal tracking-tight">

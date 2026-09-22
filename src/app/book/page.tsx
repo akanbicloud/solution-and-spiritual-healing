@@ -3,7 +3,6 @@ import { BookingForm } from "@/components/BookingForm";
 import { WhatsAppGroupBanner } from "@/components/WhatsAppGroupBanner";
 import { siteConfig } from "@/config/site";
 import {
-  CalendarBlank,
   Phone,
   WhatsappLogo,
   MapPin,
@@ -33,7 +32,6 @@ export default async function BookPage({
       {/* Page Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-12 text-center">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-light border border-emerald-deep/20 text-emerald-deep text-xs font-bold uppercase tracking-wider mb-4">
-          <CalendarBlank size={14} weight="bold" className="text-gold" />
           Private Spiritual Sessions
         </div>
         <h1 className="text-3xl sm:text-5xl font-bold font-serif text-charcoal tracking-tight">

@@ -7,7 +7,6 @@ import { Post } from "@/content/posts";
 import { useI18n } from "@/i18n/context";
 import {
   MagnifyingGlass,
-  Sparkle,
   ArrowRight,
   BookOpen,
   Clock,
@@ -127,7 +126,6 @@ export function BlogIndexClient({ posts }: { posts: Post[] }) {
                     />
                     <div className="absolute top-4 left-4 rtl:left-auto rtl:right-4">
                       <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-deep text-white text-xs font-bold shadow-md">
-                        <Sparkle size={14} weight="fill" className="text-gold-light" />
                         Featured Article
                       </span>
                     </div>

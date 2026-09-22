@@ -3,7 +3,7 @@
 import React from "react";
 import { siteConfig } from "@/config/site";
 import { useI18n } from "@/i18n/context";
-import { UsersThree, ArrowUpRight, ShieldCheck, Sparkle } from "@phosphor-icons/react";
+import { UsersThree, ArrowUpRight, ShieldCheck } from "@phosphor-icons/react";
 
 export function WhatsAppGroupBanner() {
   const { t } = useI18n();
@@ -22,7 +22,6 @@ export function WhatsAppGroupBanner() {
             </div>
             <div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 text-gold-light text-xs font-semibold uppercase tracking-wider mb-2 border border-gold/30">
-                <Sparkle size={13} weight="fill" />
                 Community Fellowship
               </div>
               <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold font-serif text-white tracking-tight">

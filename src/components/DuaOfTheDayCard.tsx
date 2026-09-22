@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Dua } from "@/content/duas";
 import { useI18n } from "@/i18n/context";
 import { siteConfig } from "@/config/site";
-import { Copy, Check, ShareNetwork, Sparkle, BookOpen } from "@phosphor-icons/react";
+import { Copy, Check, ShareNetwork, BookOpen } from "@phosphor-icons/react";
 import confetti from "canvas-confetti";
 
 export function DuaOfTheDayCard({ dua }: { dua: Dua | null }) {
@@ -43,7 +43,6 @@ export function DuaOfTheDayCard({ dua }: { dua: Dua | null }) {
       <div className="relative z-10 flex flex-col items-center text-center">
         {/* Top category & badge */}
         <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-emerald-light border border-emerald-deep/20 text-emerald-deep text-xs font-bold uppercase tracking-wider mb-4">
-          <Sparkle size={15} weight="fill" className="text-gold" />
           <span>{dua.category}</span>
           <span className="text-emerald-300">•</span>
           <span>{t("duaSection", "badge")}</span>
