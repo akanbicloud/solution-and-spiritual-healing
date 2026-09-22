@@ -3,7 +3,7 @@ import { siteConfig } from "@/config/site";
 
 export async function GET() {
   const posts = await getPosts();
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://alfacairo.com";
+  const siteUrl = siteConfig.url;
 
   const feedItems = posts
     .map((post) => {

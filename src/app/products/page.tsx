@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "Traditional Herbal Products & Spiritual Preparations",
   description:
     "Explore our complete range of 12 traditional herbal formulations and spiritual preparations, prepared under traditional wellness wisdom, with Nationwide Delivery.",
+  alternates: {
+    canonical: "/products",
+  },
 };
 
 export default async function ProductsPage() {

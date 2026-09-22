@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   title: "Book a Consultation with Alfacairo",
   description:
     "Schedule an in-person spiritual consultation at Alfa Cairo House in Owode Egba, Ogun State, or arrange a direct phone session.",
+  alternates: {
+    canonical: "/book",
+  },
 };
 
 export default async function BookPage({
@@ -77,19 +80,19 @@ export default async function BookPage({
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 text-center">
           <div className="p-5 sm:p-6 rounded-2xl bg-white border border-gold-hairline shadow-soft-sm">
             <ShieldCheck size={28} weight="fill" className="text-emerald-deep mx-auto mb-2" />
-            <h4 className="text-sm font-bold font-serif text-charcoal">Complete Privacy</h4>
+            <h2 className="text-sm font-bold font-serif text-charcoal">Complete Privacy</h2>
             <p className="text-xs text-muted mt-1">All prayer requests and family matters are kept strictly confidential.</p>
           </div>
 
           <div className="p-5 sm:p-6 rounded-2xl bg-white border border-gold-hairline shadow-soft-sm">
             <Clock size={28} weight="fill" className="text-emerald-deep mx-auto mb-2" />
-            <h4 className="text-sm font-bold font-serif text-charcoal">All Hours Welcome</h4>
+            <h2 className="text-sm font-bold font-serif text-charcoal">All Hours Welcome</h2>
             <p className="text-xs text-muted mt-1">Available 7 days a week for both daytime and evening prayers.</p>
           </div>
 
           <div className="p-5 sm:p-6 rounded-2xl bg-white border border-gold-hairline shadow-soft-sm">
             <MapPin size={28} weight="fill" className="text-emerald-deep mx-auto mb-2" />
-            <h4 className="text-sm font-bold font-serif text-charcoal">Owode Egba Sanctuary</h4>
+            <h2 className="text-sm font-bold font-serif text-charcoal">Owode Egba Sanctuary</h2>
             <p className="text-xs text-muted mt-1">Comfortable, serene prayer sanctuary with easy road access in Ogun State.</p>
           </div>
         </div>

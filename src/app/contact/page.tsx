@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   title: "Contact Alfacairo & Visit Alfa Cairo House",
   description:
     "Get directions to Alfa Cairo House in Owode Egba, Ogun State. Call, WhatsApp, or join our community group for spiritual guidance and prayers.",
+  alternates: {
+    canonical: "/contact",
+  },
 };
 
 export default function ContactPage() {
@@ -54,9 +57,9 @@ export default function ContactPage() {
                 <Phone size={22} weight="fill" />
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="text-base font-bold font-serif text-charcoal">
+                <h2 className="text-base font-bold font-serif text-charcoal">
                   Direct Telephone
-                </h3>
+                </h2>
                 <p className="text-xs text-muted mt-0.5">
                   Direct call line to Alfacairo and his prayer counsellors.
                 </p>
@@ -77,9 +80,9 @@ export default function ContactPage() {
                 <WhatsappLogo size={22} weight="fill" />
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="text-base font-bold font-serif text-charcoal">
+                <h2 className="text-base font-bold font-serif text-charcoal">
                   WhatsApp Direct Message
-                </h3>
+                </h2>
                 <p className="text-xs text-muted mt-0.5">
                   Instant inquiries, consultation scheduling, and product orders.
                 </p>
@@ -105,9 +108,9 @@ export default function ContactPage() {
                 <MapPin size={22} weight="fill" />
               </div>
               <div className="flex-1 min-w-0">
-                <h3 className="text-base font-bold font-serif text-charcoal">
+                <h2 className="text-base font-bold font-serif text-charcoal">
                   Physical Sanctuary
-                </h3>
+                </h2>
                 <p className="text-sm font-semibold text-charcoal mt-1">
                   {siteConfig.address}
                 </p>
@@ -120,9 +123,9 @@ export default function ContactPage() {
 
             {/* Social Media Links */}
             <div className="p-5 sm:p-6 rounded-2xl sm:rounded-3xl bg-cream-light border border-gold-hairline/60">
-              <h4 className="text-xs font-bold uppercase tracking-wider text-charcoal mb-3">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-charcoal mb-3">
                 Official Social Channels (Alfa Cairo)
-              </h4>
+              </h3>
               <div className="flex flex-wrap items-center gap-2.5 sm:gap-3">
                 {siteConfig.socials.facebook ? (
                   <a

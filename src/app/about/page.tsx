@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   title: "About Alfacairo — Spiritual Healer & Prayer Counsellor",
   description:
     "Learn about Alfacairo, dedicated spiritual healer and prayer counsellor serving individuals and families across Nigeria from Alfa Cairo House in Owode Egba, Ogun State.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default async function AboutPage() {

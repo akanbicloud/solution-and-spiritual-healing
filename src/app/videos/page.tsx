@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "Videos & Photo Gallery — Alfacairo",
   description:
     "Watch video lectures, spiritual reminders, and explore photos of Alfa Cairo House and traditional wellness preparations.",
+  alternates: {
+    canonical: "/videos",
+  },
 };
 
 export default async function VideosPage() {
@@ -62,9 +65,9 @@ export default async function VideosPage() {
                 <span className="text-xs font-bold uppercase tracking-wider text-charcoal/60">YouTube Channel</span>
                 <ArrowUpRight size={16} weight="bold" className="text-muted group-hover:text-emerald-deep group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </div>
-              <h3 className="font-serif font-bold text-lg text-charcoal group-hover:text-emerald-deep transition-colors mt-0.5">
+              <h2 className="font-serif font-bold text-lg text-charcoal group-hover:text-emerald-deep transition-colors mt-0.5">
                 @ismyl89
-              </h3>
+              </h2>
               <p className="text-xs text-muted mt-1 leading-relaxed">
                 Full-length Quranic recitations, spiritual counsel lectures, and special prayer recordings.
               </p>
@@ -86,9 +89,9 @@ export default async function VideosPage() {
                 <span className="text-xs font-bold uppercase tracking-wider text-charcoal/60">TikTok Official</span>
                 <ArrowUpRight size={16} weight="bold" className="text-muted group-hover:text-emerald-deep group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </div>
-              <h3 className="font-serif font-bold text-lg text-charcoal group-hover:text-emerald-deep transition-colors mt-0.5">
+              <h2 className="font-serif font-bold text-lg text-charcoal group-hover:text-emerald-deep transition-colors mt-0.5">
                 @alhismailadewunmi
-              </h3>
+              </h2>
               <p className="text-xs text-muted mt-1 leading-relaxed">
                 Daily Adhkar clips, short Quranic spiritual reminders, and live prayer broadcasts.
               </p>
@@ -110,9 +113,9 @@ export default async function VideosPage() {
                 <span className="text-xs font-bold uppercase tracking-wider text-charcoal/60">Facebook Community</span>
                 <ArrowUpRight size={16} weight="bold" className="text-muted group-hover:text-emerald-deep group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </div>
-              <h3 className="font-serif font-bold text-lg text-charcoal group-hover:text-emerald-deep transition-colors mt-0.5">
+              <h2 className="font-serif font-bold text-lg text-charcoal group-hover:text-emerald-deep transition-colors mt-0.5">
                 Alfa Cairo Official
-              </h3>
+              </h2>
               <p className="text-xs text-muted mt-1 leading-relaxed">
                 Community prayer announcements, programme schedules, and fellowship updates.
               </p>

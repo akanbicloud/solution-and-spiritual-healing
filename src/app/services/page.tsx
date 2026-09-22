@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   title: "Spiritual Services & Prayer Counselling",
   description:
     "Compassionate, faith-inspired spiritual guidance and prayer counselling with Alfacairo for life breakthrough, protection, and family harmony.",
+  alternates: {
+    canonical: "/services",
+  },
 };
 
 const services = [

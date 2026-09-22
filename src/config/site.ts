@@ -1,4 +1,5 @@
 export const siteConfig = {
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://spiritualandsolution.vercel.app",
   name: "Alfacairo",
   brand: "Solution Spiritual Healing & Prayer",
   brandArabic: "حلول الشفاء والدعاء",

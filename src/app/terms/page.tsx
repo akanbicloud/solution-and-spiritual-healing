@@ -4,9 +4,12 @@ import { FileText, ShieldWarning, Handshake, ArrowLeft, CheckCircle } from "@pho
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Solution Spiritual Healing & Prayer",
+  title: "Terms of Service",
   description:
     "Terms of service, spiritual counseling disclaimers, and traditional herbal guidance disclosures for Solution Spiritual Healing & Prayer (Alfacairo).",
+  alternates: {
+    canonical: "/terms",
+  },
 };
 
 export default function TermsPage() {

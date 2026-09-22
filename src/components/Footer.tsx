@@ -90,9 +90,9 @@ export function Footer() {
 
           {/* Column 2: Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-sm font-bold uppercase tracking-wider text-charcoal font-serif">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-charcoal font-serif">
               {t("footer", "quickLinks")}
-            </h4>
+            </h3>
             <ul className="space-y-2.5 text-xs sm:text-sm text-muted">
               <li>
                 <Link href="/" className="hover:text-emerald-deep transition-colors">
@@ -134,9 +134,9 @@ export function Footer() {
 
           {/* Column 3: Contact & Sanctuary Info */}
           <div className="space-y-4">
-            <h4 className="text-sm font-bold uppercase tracking-wider text-charcoal font-serif">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-charcoal font-serif">
               {t("footer", "contactInfo")}
-            </h4>
+            </h3>
             <div className="space-y-3 text-xs sm:text-sm text-muted">
               <div className="flex items-start gap-2.5">
                 <MapPin size={18} weight="fill" className="text-emerald-deep shrink-0 mt-0.5" />
@@ -157,9 +157,9 @@ export function Footer() {
 
           {/* Column 4: WhatsApp Group & Community */}
           <div className="space-y-4">
-            <h4 className="text-sm font-bold uppercase tracking-wider text-charcoal font-serif">
+            <h3 className="text-sm font-bold uppercase tracking-wider text-charcoal font-serif">
               Community Connection
-            </h4>
+            </h3>
             <p className="text-xs sm:text-sm text-muted leading-relaxed">
               Stay connected for weekly spiritual reminders, daily prayers, and updates from Alfacairo.
             </p>

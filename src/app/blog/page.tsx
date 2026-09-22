@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "The Alfacairo Blog — Reminders and Guidance",
   description:
     "Spiritual articles, Quranic supplications, Ruqyah guidance, and traditional wellness insights by Alfacairo in Owode Egba, Ogun State.",
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 export default async function BlogPage() {

@@ -33,11 +33,12 @@ export async function generateMetadata({
   if (!post) return { title: "Post Not Found" };
 
   return {
-    title: `${post.title} | Alfacairo Blog`,
+    title: post.title,
     description: post.excerpt,
     openGraph: {
       title: post.title,
       description: post.excerpt,
+      url: `${siteConfig.url}/blog/${post.slug}`,
       type: "article",
       publishedTime: post.publishedAt,
       authors: [siteConfig.name],
@@ -83,7 +84,7 @@ export default async function BlogPostDetailPage({
       name: siteConfig.brand,
       logo: {
         "@type": "ImageObject",
-        url: "https://alfacairo.com/images/logo.svg",
+        url: `${siteConfig.url}/images/logo.svg`,
       },
     },
   };

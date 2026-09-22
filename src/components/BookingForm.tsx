@@ -167,11 +167,13 @@ export function BookingForm({ initialService = "" }: { initialService?: string }
       {/* Honeypot hidden input */}
       <input
         type="text"
+        id="bot-honeypot"
         {...register("honeypot")}
         tabIndex={-1}
         autoComplete="off"
         className="hidden"
         aria-hidden="true"
+        aria-label="Do not fill this field"
       />
 
       {apiError && (

@@ -32,12 +32,16 @@ export async function generateMetadata({
   if (!product) return { title: "Product Not Found" };
 
   return {
-    title: `${product.name} | Solution Spiritual Healing & Prayer`,
+    title: product.name,
     description: product.shortDescription,
     openGraph: {
-      title: `${product.name} | Solution Spiritual Healing & Prayer`,
+      title: product.name,
       description: product.shortDescription,
+      url: `${siteConfig.url}/products/${product.slug}`,
       images: [{ url: product.image }],
+    },
+    alternates: {
+      canonical: `/products/${product.slug}`,
     },
   };
 }
@@ -64,12 +68,18 @@ export default async function ProductDetailPage({
     "@context": "https://schema.org/",
     "@type": "Product",
     name: product.name,
-    image: product.image,
+    image: product.image.startsWith("http") ? product.image : `${siteConfig.url}${product.image}`,
     description: product.shortDescription,
     category: product.category,
     brand: {
       "@type": "Brand",
       name: siteConfig.brand,
+    },
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      priceCurrency: "NGN",
+      url: `${siteConfig.url}/products/${product.slug}`,
     },
   };
 
@@ -148,9 +158,9 @@ export default async function ProductDetailPage({
 
               {/* Long Description & Guidance */}
               <div className="pt-6 border-t border-gold-hairline/60 space-y-4">
-                <h3 className="text-lg font-bold font-serif text-charcoal">
+                <h2 className="text-lg font-bold font-serif text-charcoal">
                   About This Formulation
-                </h3>
+                </h2>
                 {product.longDescription.map((paragraph, i) => (
                   <p key={i} className="text-sm text-charcoal/80 leading-relaxed">
                     {paragraph}

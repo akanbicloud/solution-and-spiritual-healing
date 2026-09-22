@@ -60,6 +60,7 @@ export function ProductCatalog({ products }: { products: Product[] }) {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search herbal remedies..."
+            aria-label="Search herbal remedies"
             className="w-full pl-9 pr-4 py-2.5 rounded-xl bg-cream-light border border-gold-hairline text-xs font-medium text-charcoal placeholder-muted focus:outline-none focus:ring-2 focus:ring-emerald-deep/40 focus:bg-white min-h-[42px]"
           />
           <MagnifyingGlass size={16} weight="bold" className="text-muted absolute left-3 top-1/2 -translate-y-1/2 rtl:left-auto rtl:right-3" />
@@ -73,9 +74,9 @@ export function ProductCatalog({ products }: { products: Product[] }) {
             <Truck size={22} weight="fill" />
           </div>
           <div>
-            <h4 className="text-xs sm:text-sm font-bold">
+            <h2 className="text-xs sm:text-sm font-bold">
               Nationwide Delivery Across Nigeria
-            </h4>
+            </h2>
             <p className="text-[11px] text-emerald-100">
               {t("productsSection", "deliveryNotice")}
             </p>

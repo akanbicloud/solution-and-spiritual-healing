@@ -36,7 +36,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://alfacairo.com"),
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: `${siteConfig.brand} | ${siteConfig.name} — Owode Egba`,
     template: `%s | ${siteConfig.brand}`,
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `${siteConfig.brand} — Alfacairo`,
     description: siteConfig.subline,
-    url: "https://alfacairo.com",
+    url: siteConfig.url,
     siteName: siteConfig.brand,
     images: [
       {
@@ -99,7 +99,7 @@ export default function RootLayout({
   // LocalBusiness structured data
   const localBusinessJsonLd = {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["LocalBusiness", "Organization"],
     name: siteConfig.brand,
     alternateName: "Alfacairo Spiritual Healing & Prayer",
     description: siteConfig.subline,
@@ -112,8 +112,15 @@ export default function RootLayout({
       addressCountry: "NG",
     },
     openingHours: "Mo-Su 00:00-23:59",
-    url: "https://alfacairo.com",
-    image: "https://alfacairo.com/images/house.jpg",
+    url: siteConfig.url,
+    image: `${siteConfig.url}/images/house.jpg`,
+    logo: `${siteConfig.url}/images/logo.svg`,
+    sameAs: [
+      siteConfig.socials.facebook,
+      siteConfig.socials.tiktok,
+      siteConfig.socials.youtube,
+      siteConfig.whatsappGroup,
+    ].filter(Boolean),
   };
 
   return (

@@ -4,9 +4,12 @@ import { ShieldCheck, LockKey, EnvelopeSimple, Phone, ArrowLeft } from "@phospho
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Solution Spiritual Healing & Prayer",
+  title: "Privacy Policy",
   description:
     "Privacy Policy for Solution Spiritual Healing & Prayer (Alfacairo). Learn how we handle your personal consultation requests and contact information under Nigerian data protection principles.",
+  alternates: {
+    canonical: "/privacy",
+  },
 };
 
 export default function PrivacyPage() {

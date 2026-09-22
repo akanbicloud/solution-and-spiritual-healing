@@ -1,8 +1,9 @@
 import { MetadataRoute } from "next";
 import { getPosts, getProducts } from "@/lib/cms";
+import { siteConfig } from "@/config/site";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://alfacairo.com";
+  const siteUrl = siteConfig.url;
   const posts = await getPosts();
   const products = await getProducts();
 
