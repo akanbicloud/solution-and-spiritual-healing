@@ -1,34 +1,14 @@
 import { MetadataRoute } from "next";
 import { fallbackProducts } from "@/content/products";
-import { getPublishedPosts } from "@/content/posts";
-import { getProducts, getPosts } from "@/lib/cms";
-import { siteConfig } from "@/config/site";
+import { fallbackPosts } from "@/content/posts";
 
-export const PRIMARY_DOMAIN = "https://spirituallandsolution.com.ng";
+export const PRIMARY_DOMAIN = "https://spirituallandsolutionhealing.com.ng";
 
-export const revalidate = 3600; // Revalidate sitemap at most once per hour
+export const dynamic = "force-static";
+export const revalidate = false;
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  // Always enforce the primary production domain to prevent Google Search Console domain mismatch errors
+export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = PRIMARY_DOMAIN;
-
-  let products = fallbackProducts;
-  let posts = getPublishedPosts();
-
-  try {
-    const [cmsProducts, cmsPosts] = await Promise.all([
-      getProducts(),
-      getPosts(),
-    ]);
-    if (cmsProducts && cmsProducts.length > 0) {
-      products = cmsProducts;
-    }
-    if (cmsPosts && cmsPosts.length > 0) {
-      posts = cmsPosts;
-    }
-  } catch {
-    // Gracefully fall back to local content
-  }
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
@@ -93,7 +73,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  const productRoutes: MetadataRoute.Sitemap = products
+  const productRoutes: MetadataRoute.Sitemap = fallbackProducts
     .filter((p) => p.active !== false)
     .map((p) => ({
       url: `${siteUrl}/products/${p.slug}`,
@@ -102,7 +82,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.85,
     }));
 
-  const postRoutes: MetadataRoute.Sitemap = posts.map((p) => {
+  const postRoutes: MetadataRoute.Sitemap = fallbackPosts.map((p) => {
     let lastMod = new Date();
     if (p.publishedAt) {
       const parsed = new Date(p.publishedAt);
@@ -120,5 +100,3 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return [...staticRoutes, ...productRoutes, ...postRoutes];
 }
-
-

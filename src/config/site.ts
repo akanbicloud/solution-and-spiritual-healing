@@ -2,7 +2,7 @@ export const siteConfig = {
   url:
     process.env.NEXT_PUBLIC_SITE_URL && !process.env.NEXT_PUBLIC_SITE_URL.includes("vercel.app")
       ? process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "")
-      : "https://spirituallandsolution.com.ng",
+      : "https://spirituallandsolutionhealing.com.ng",
   name: "Alfacairo",
   brand: "Solution Spiritual Healing & Prayer",
   brandArabic: "حلول الشفاء والدعاء",
