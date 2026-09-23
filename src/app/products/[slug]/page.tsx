@@ -6,6 +6,7 @@ import { getProductBySlug, getProducts } from "@/lib/cms";
 import { siteConfig } from "@/config/site";
 import { ProductCard } from "@/components/ProductCard";
 import { WhatsAppGroupBanner } from "@/components/WhatsAppGroupBanner";
+import { generateBreadcrumbSchema, generateProductSchema } from "@/lib/schema";
 import {
   Truck,
   WhatsappLogo,
@@ -36,7 +37,13 @@ export async function generateMetadata({
       title: product.name,
       description: product.shortDescription,
       url: `${siteConfig.url}/products/${product.slug}`,
-      images: [{ url: product.image }],
+      images: [
+        {
+          url: product.image.startsWith("http")
+            ? product.image
+            : `${siteConfig.url}${product.image}`,
+        },
+      ],
     },
     alternates: {
       canonical: `/products/${product.slug}`,
@@ -61,28 +68,21 @@ export default async function ProductDetailPage({
     .filter((p) => p.slug !== product.slug && p.category === product.category)
     .slice(0, 3);
 
-  // Structured Data Schema for Product
-  const productJsonLd = {
-    "@context": "https://schema.org/",
-    "@type": "Product",
-    name: product.name,
-    image: product.image.startsWith("http") ? product.image : `${siteConfig.url}${product.image}`,
-    description: product.shortDescription,
-    category: product.category,
-    brand: {
-      "@type": "Brand",
-      name: siteConfig.brand,
-    },
-    offers: {
-      "@type": "Offer",
-      availability: "https://schema.org/InStock",
-      priceCurrency: "NGN",
-      url: `${siteConfig.url}/products/${product.slug}`,
-    },
-  };
+  // Structured Data Schemas
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Products", path: "/products" },
+    { name: product.name, path: `/products/${product.slug}` },
+  ]);
+
+  const productJsonLd = generateProductSchema(product);
 
   return (
     <div className="w-full flex flex-col py-6 sm:py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
@@ -111,6 +111,7 @@ export default async function ProductDetailPage({
                   alt={product.name}
                   fill
                   priority
+                  sizes="(max-width: 1024px) 100vw, 512px"
                   className="object-cover"
                 />
               </div>
@@ -203,3 +204,4 @@ export default async function ProductDetailPage({
     </div>
   );
 }
+

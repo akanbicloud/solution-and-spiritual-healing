@@ -13,6 +13,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { DuaOfTheDayCard } from "@/components/DuaOfTheDayCard";
 import { WhatsAppGroupBanner } from "@/components/WhatsAppGroupBanner";
 import { WeeklyPrayerInvitation } from "@/components/WeeklyPrayerInvitation";
+import { generateFAQSchema } from "@/lib/schema";
 import {
   ShieldCheck,
   Truck,
@@ -159,6 +160,7 @@ export default async function HomePage() {
                     alt="Sheikh Ismail Adewunmi (Alfacairo) in green scarf and prayer cap"
                     fill
                     priority
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 450px"
                     className="object-cover object-top"
                   />
                   {/* Glassmorphic Corner Card */}
@@ -336,6 +338,7 @@ export default async function HomePage() {
                     src="/images/alfacairo-portrait.jpg"
                     alt="Alfacairo in maroon kaftan holding microphone with open Quran"
                     fill
+                    sizes="(max-width: 768px) 100vw, 400px"
                     className="object-cover object-top"
                   />
                 </div>
@@ -472,6 +475,7 @@ export default async function HomePage() {
                     src={post.coverImage}
                     alt={post.coverImageAlt || post.title}
                     fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-3 left-3 rtl:left-auto rtl:right-3">
@@ -608,7 +612,104 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* 11. REUSABLE WHATSAPP GROUP BANNER */}
+      {/* 11. FREQUENTLY ASKED QUESTIONS & GEO ANSWERS */}
+      <section className="py-20 bg-white border-t border-gold-hairline" id="sanctuary-faq">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(
+              generateFAQSchema([
+                {
+                  question: "Who is Alfacairo and what is Solution Spiritual Healing & Prayer?",
+                  answer:
+                    "Sheikh Ismail Adewunmi (Alfacairo) is a respected spiritual healer, prayer counsellor, and Islamic botanical wellness practitioner at Alfa Cairo House in Owode Egba, Ogun State, Nigeria. Solution Spiritual Healing & Prayer provides confidential pastoral guidance, Quranic Ruqyah supplications, and prayer-prepared traditional herbal formulations to support health, peace, and spiritual breakthroughs.",
+                },
+                {
+                  question: "What spiritual and herbal services are provided?",
+                  answer:
+                    "We offer private spiritual counselling, prayers for career and business breakthroughs, spiritual neutralization and cleansing, protection from evil eye and envy (hasad and ruqyah), marital reconciliation, and 12 authentic traditional herbal formulations delivered nationwide across Nigeria.",
+                },
+                {
+                  question: "Where is Alfa Cairo House located and what areas do you serve?",
+                  answer:
+                    "Our physical sanctuary is located at Alfa Cairo House in Owode Egba, Ogun State, Nigeria (along the Sagamu–Abeokuta expressway). We receive in-person visitors from Ogun State, Lagos, Ibadan, and all parts of Nigeria, while providing remote phone/WhatsApp consultations for clients across Nigeria and the global diaspora.",
+                },
+                {
+                  question: "How do I book a private consultation or order traditional remedies?",
+                  answer:
+                    "You can book through our online reservation page (/book), call directly at 08035948898 (+2348035948898), or contact Alfacairo via WhatsApp. For herbal preparations, browse our catalog on /products and submit your order directly via WhatsApp with nationwide delivery.",
+                },
+                {
+                  question: "Can I receive prayers and consultations remotely if I live outside Ogun State or abroad?",
+                  answer:
+                    "Yes. Seekers in Lagos, Abuja, Port Harcourt, the UK, the US, and worldwide consult regularly with Alfacairo via scheduled phone or WhatsApp audio sessions, receiving the same spiritual attention, personalized daily adhkar regimens, and dedicated prayer backing.",
+                },
+                {
+                  question: "Are personal matters and consultation discussions kept confidential?",
+                  answer:
+                    "Yes, completely. Confidentiality is held as a sacred pastoral trust. All prayer requests, family circumstances, and personal details shared with Alfacairo remain strictly private and protected under Nigerian privacy principles.",
+                },
+              ])
+            ),
+          }}
+        />
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-14">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-light border border-emerald-deep/20 text-emerald-deep text-xs font-bold uppercase tracking-wider mb-3">
+              Answers &amp; Clarity
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-bold font-serif text-charcoal tracking-tight">
+              Frequently Asked Questions &amp; Direct Answers
+            </h2>
+            <p className="mt-3 text-sm sm:text-base text-muted leading-relaxed">
+              Clear, transparent information about our spiritual sanctuary in Owode Egba, consultation methods, herbal formulations, and regional reach.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "Who is Alfacairo and what is Solution Spiritual Healing & Prayer?",
+                a: "Sheikh Ismail Adewunmi (Alfacairo) is a respected spiritual healer, prayer counsellor, and Islamic botanical wellness practitioner at Alfa Cairo House in Owode Egba, Ogun State, Nigeria. Solution Spiritual Healing & Prayer provides confidential pastoral guidance, Quranic Ruqyah supplications, and prayer-prepared traditional herbal formulations to support health, peace, and spiritual breakthroughs.",
+              },
+              {
+                q: "What spiritual and herbal services are provided?",
+                a: "We offer private spiritual counselling, prayers for career and business breakthroughs, spiritual neutralization and cleansing, protection from evil eye and envy (hasad and ruqyah), marital reconciliation, and 12 authentic traditional herbal formulations delivered nationwide across Nigeria.",
+              },
+              {
+                q: "Where is Alfa Cairo House located and what areas do you serve?",
+                a: "Our physical sanctuary is located at Alfa Cairo House in Owode Egba, Ogun State, Nigeria (along the Sagamu–Abeokuta expressway). We receive in-person visitors from Ogun State, Lagos, Ibadan, and all parts of Nigeria, while providing remote phone/WhatsApp consultations for clients across Nigeria and the global diaspora.",
+              },
+              {
+                q: "How do I book a private consultation or order traditional remedies?",
+                a: "You can book through our online reservation page (/book), call directly at 08035948898 (+2348035948898), or contact Alfacairo via WhatsApp. For herbal preparations, browse our catalog on /products and submit your order directly via WhatsApp with nationwide delivery.",
+              },
+              {
+                q: "Can I receive prayers and consultations remotely if I live outside Ogun State or abroad?",
+                a: "Yes. Seekers in Lagos, Abuja, Port Harcourt, the UK, the US, and worldwide consult regularly with Alfacairo via scheduled phone or WhatsApp audio sessions, receiving the same spiritual attention, personalized daily adhkar regimens, and dedicated prayer backing.",
+              },
+              {
+                q: "Are personal matters and consultation discussions kept confidential?",
+                a: "Yes, completely. Confidentiality is held as a sacred pastoral trust. All prayer requests, family circumstances, and personal details shared with Alfacairo remain strictly private and protected under Nigerian privacy principles.",
+              },
+            ].map((faq, idx) => (
+              <div
+                key={idx}
+                className="rounded-2xl sm:rounded-3xl bg-cream-light/60 border border-gold-hairline/70 p-5 sm:p-6 shadow-soft"
+              >
+                <h3 className="text-base sm:text-lg font-bold font-serif text-charcoal mb-2">
+                  {faq.q}
+                </h3>
+                <p className="text-xs sm:text-sm text-charcoal/85 leading-relaxed">
+                  {faq.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 12. REUSABLE WHATSAPP GROUP BANNER */}
       <WhatsAppGroupBanner />
 
       {/* 12. FINAL CALL-TO-ACTION SECTION */}

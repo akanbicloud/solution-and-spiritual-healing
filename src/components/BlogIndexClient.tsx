@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Post } from "@/content/posts";
-import { useI18n } from "@/i18n/context";
 import {
   MagnifyingGlass,
   ArrowRight,
@@ -17,7 +16,6 @@ import { siteConfig } from "@/config/site";
 export function BlogIndexClient({ posts }: { posts: Post[] }) {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [searchQuery, setSearchQuery] = useState("");
-  const { t } = useI18n();
 
   const categories = [
     "All",

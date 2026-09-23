@@ -7,6 +7,7 @@ import { siteConfig } from "@/config/site";
 import { ArabicPassageBlock } from "@/components/ArabicPassageBlock";
 import { PostShareButtons } from "@/components/PostShareButtons";
 import { WhatsAppGroupBanner } from "@/components/WhatsAppGroupBanner";
+import { generateBreadcrumbSchema, generateArticleSchema } from "@/lib/schema";
 import {
   CalendarBlank,
   Clock,
@@ -31,6 +32,10 @@ export async function generateMetadata({
   const post = await getPostBySlug(slug);
   if (!post) return { title: "Post Not Found" };
 
+  const imageUrl = post.coverImage.startsWith("http")
+    ? post.coverImage
+    : `${siteConfig.url}${post.coverImage}`;
+
   return {
     title: post.title,
     description: post.excerpt,
@@ -41,7 +46,7 @@ export async function generateMetadata({
       type: "article",
       publishedTime: post.publishedAt,
       authors: [siteConfig.name],
-      images: [{ url: post.coverImage }],
+      images: [{ url: imageUrl }],
     },
     alternates: {
       canonical: `/blog/${post.slug}`,
@@ -66,30 +71,21 @@ export default async function BlogPostDetailPage({
     .filter((p) => p.slug !== post.slug && p.category === post.category)
     .slice(0, 3);
 
-  // JSON-LD Article Schema
-  const articleJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.excerpt,
-    image: post.coverImage,
-    datePublished: post.publishedAt,
-    author: {
-      "@type": "Person",
-      name: siteConfig.name,
-    },
-    publisher: {
-      "@type": "Organization",
-      name: siteConfig.brand,
-      logo: {
-        "@type": "ImageObject",
-        url: `${siteConfig.url}/images/logo.svg`,
-      },
-    },
-  };
+  // Structured Data Schemas
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", path: "/" },
+    { name: "Blog", path: "/blog" },
+    { name: post.title, path: `/blog/${post.slug}` },
+  ]);
+
+  const articleJsonLd = generateArticleSchema(post);
 
   return (
     <article className="w-full flex flex-col py-6 sm:py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
@@ -154,6 +150,7 @@ export default async function BlogPostDetailPage({
             alt={post.coverImageAlt || post.title}
             fill
             priority
+            sizes="(max-width: 896px) 100vw, 896px"
             className="object-cover"
           />
         </div>
@@ -266,3 +263,4 @@ export default async function BlogPostDetailPage({
     </article>
   );
 }
+

@@ -12,7 +12,6 @@ import {
   WhatsappLogo,
   CheckCircle,
   MapPin,
-  ShieldCheck,
 } from "@phosphor-icons/react";
 import confetti from "canvas-confetti";
 

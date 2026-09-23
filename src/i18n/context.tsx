@@ -6,7 +6,6 @@ import { Locale, translations, supportedLocales } from "./translations";
 interface I18nContextType {
   locale: Locale;
   setLocale: (locale: Locale) => void;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   t: (section: keyof typeof translations.en, key: string) => string;
   dir: "ltr" | "rtl";
 }
@@ -19,6 +18,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const saved = localStorage.getItem("alfacairo_locale") as Locale;
     if (saved && ["en", "ar", "yo", "ha"].includes(saved)) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setLocaleState(saved);
       document.documentElement.lang = saved;
       document.documentElement.dir = saved === "ar" ? "rtl" : "ltr";

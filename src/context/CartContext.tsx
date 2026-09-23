@@ -32,6 +32,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     try {
       const stored = localStorage.getItem("alfacairo_cart");
       if (stored) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setItems(JSON.parse(stored));
       }
     } catch {

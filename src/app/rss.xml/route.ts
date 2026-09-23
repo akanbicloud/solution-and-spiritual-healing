@@ -1,8 +1,8 @@
-import { getPosts } from "@/lib/cms";
+import { getPublishedPosts } from "@/content/posts";
 import { siteConfig } from "@/config/site";
 
 export async function GET() {
-  const posts = await getPosts();
+  const posts = getPublishedPosts();
   const siteUrl = siteConfig.url;
 
   const feedItems = posts
@@ -38,3 +38,4 @@ export async function GET() {
     },
   });
 }
+

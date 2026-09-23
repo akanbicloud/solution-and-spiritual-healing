@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Product } from "@/content/products";
 import { useCart } from "@/context/CartContext";
 import { useI18n } from "@/i18n/context";
-import { WhatsappLogo, Plus, ShieldCheck, ArrowRight } from "@phosphor-icons/react";
+import { WhatsappLogo, Plus, ArrowRight } from "@phosphor-icons/react";
 
 export function ProductCard({ product }: { product: Product }) {
   const { addItem } = useCart();

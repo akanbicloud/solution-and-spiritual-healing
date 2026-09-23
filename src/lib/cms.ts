@@ -2,7 +2,7 @@ import { sanityClient } from "@/sanity/client";
 import { isSanityConfigured } from "@/sanity/env";
 import { fallbackProducts, Product } from "@/content/products";
 import { fallbackDuas, Dua } from "@/content/duas";
-import { fallbackPosts, Post, getPublishedPosts } from "@/content/posts";
+import { Post, getPublishedPosts } from "@/content/posts";
 import { fallbackSiteSettings, SiteSettings } from "@/content/siteSettings";
 import { fallbackTestimonials, Testimonial } from "@/content/testimonials";
 import { fallbackMediaItems, MediaItem, fallbackGallery, GalleryPhoto } from "@/content/media";

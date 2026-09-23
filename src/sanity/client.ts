@@ -1,5 +1,5 @@
 import { createClient } from "@sanity/client";
-import imageUrlBuilder from "@sanity/image-url";
+import { createImageUrlBuilder } from "@sanity/image-url";
 import { apiVersion, dataset, projectId, isSanityConfigured } from "./env";
 
 export const sanityClient = isSanityConfigured
@@ -11,7 +11,7 @@ export const sanityClient = isSanityConfigured
     })
   : null;
 
-const builder = isSanityConfigured && sanityClient ? imageUrlBuilder(sanityClient) : null;
+const builder = isSanityConfigured && sanityClient ? createImageUrlBuilder(sanityClient) : null;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function urlFor(source: any) {

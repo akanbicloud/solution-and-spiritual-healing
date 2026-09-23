@@ -58,13 +58,13 @@ export async function POST(req: NextRequest) {
 
     const data = parseResult.data;
     const resendApiKey = process.env.RESEND_API_KEY;
-    const toEmail = process.env.BOOKING_TO_EMAIL || "bookings@alfacairo.com";
+    const toEmail = process.env.BOOKING_TO_EMAIL || siteConfig.email || "alfacairo01@gmail.com";
 
     if (resendApiKey && resendApiKey.startsWith("re_")) {
       try {
         const resend = new Resend(resendApiKey);
         await resend.emails.send({
-          from: "Alfacairo Bookings <noreply@alfacairo.com>",
+          from: "Alfacairo Bookings <noreply@spiritualandsolutionhealing.com.ng>",
           to: [toEmail],
           subject: `New Consultation Booking: ${data.fullName} (${data.service})`,
           text: `New Consultation Booking Request:

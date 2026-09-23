@@ -9,6 +9,8 @@ import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 import { WhatsAppOrderDrawer } from "@/components/WhatsAppOrderDrawer";
 
+import { generateLocalBusinessAndOrganizationSchema } from "@/lib/schema";
+
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-heading",
@@ -41,34 +43,44 @@ export const metadata: Metadata = {
     default: `${siteConfig.brand} | ${siteConfig.name} — Owode Egba`,
     template: `%s | ${siteConfig.brand}`,
   },
-  description: `${siteConfig.subline}. Spiritual guidance, prayer counselling, and traditional prayer-prepared botanical wellness at Alfa Cairo House in Owode Egba, Ogun State, Nigeria.`,
+  description: `${siteConfig.subline}. Dedicated Islamic spiritual counselling, prophetic Ruqyah prayer support, and traditional prayer-prepared botanical wellness at Alfa Cairo House in Owode Egba, Ogun State, Nigeria.`,
   keywords: [
     "Alfacairo",
-    "Solution Spiritual Healing",
+    "Solution Spiritual Healing and Prayer",
+    "Sheikh Ismail Adewunmi",
+    "Spiritual Healer Ogun State",
     "Prayer Counsellor Nigeria",
-    "Owode Egba",
-    "Ogun State",
-    "Islamic spiritual guidance",
-    "Traditional herbal remedies",
-    "Ruqyah",
+    "Owode Egba spiritual sanctuary",
+    "Abeokuta spiritual healing",
+    "Islamic spiritual guidance Lagos",
+    "Traditional herbal remedies Nigeria",
+    "Ruqyah healing and prayers",
+    "An-Najaat Wa Tahseenaat",
     "Dua of the day",
   ],
-  authors: [{ name: siteConfig.name }],
+  authors: [{ name: `${siteConfig.name} (Sheikh Ismail Adewunmi)` }],
+  creator: siteConfig.brand,
+  publisher: siteConfig.brand,
+  formatDetection: {
+    telephone: true,
+    address: true,
+    email: true,
+  },
   icons: {
     icon: "/images/emblem.svg",
     apple: "/images/emblem.svg",
   },
   openGraph: {
-    title: `${siteConfig.brand} — Alfacairo`,
-    description: siteConfig.subline,
+    title: `${siteConfig.brand} | ${siteConfig.name}`,
+    description: `${siteConfig.subline}. Dedicated Islamic spiritual counselling, Ruqyah prayers, and natural botanical remedies at Alfa Cairo House, Owode Egba, Ogun State.`,
     url: siteConfig.url,
     siteName: siteConfig.brand,
     images: [
       {
-        url: "/images/alfacairo-portrait.jpg",
-        width: 800,
-        height: 1067,
-        alt: "Alfacairo holding Quran and microphone at Alfa Cairo House",
+        url: `${siteConfig.url}/images/house.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Alfa Cairo House in Owode Egba, Ogun State — Solution Spiritual Healing & Prayer",
       },
     ],
     locale: "en_NG",
@@ -76,9 +88,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.brand} — Alfacairo`,
-    description: siteConfig.subline,
-    images: ["/images/alfacairo-portrait.jpg"],
+    title: `${siteConfig.brand} | ${siteConfig.name}`,
+    description: `${siteConfig.subline}. Spiritual guidance and traditional herbal wellness at Alfa Cairo House in Owode Egba, Ogun State.`,
+    images: [`${siteConfig.url}/images/house.jpg`],
   },
   alternates: {
     canonical: "/",
@@ -89,6 +101,14 @@ export const metadata: Metadata = {
       ha: "/?lang=ha",
     },
   },
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
+    other: {
+      ...(process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+        ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
+        : {}),
+    },
+  },
 };
 
 export default function RootLayout({
@@ -96,32 +116,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // LocalBusiness structured data
-  const localBusinessJsonLd = {
-    "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "Organization"],
-    name: siteConfig.brand,
-    alternateName: "Alfacairo Spiritual Healing & Prayer",
-    description: siteConfig.subline,
-    telephone: siteConfig.phoneIntl,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "Alfa Cairo House",
-      addressLocality: "Owode Egba",
-      addressRegion: "Ogun State",
-      addressCountry: "NG",
-    },
-    openingHours: "Mo-Su 00:00-23:59",
-    url: siteConfig.url,
-    image: `${siteConfig.url}/images/house.jpg`,
-    logo: `${siteConfig.url}/images/logo.svg`,
-    sameAs: [
-      siteConfig.socials.facebook,
-      siteConfig.socials.tiktok,
-      siteConfig.socials.youtube,
-      siteConfig.whatsappGroup,
-    ].filter(Boolean),
-  };
+  const schemaJsonLd = generateLocalBusinessAndOrganizationSchema();
 
   return (
     <html
@@ -131,7 +126,7 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJsonLd) }}
         />
       </head>
       <body className="min-h-full flex flex-col bg-ivory text-charcoal selection:bg-gold-light/30 selection:text-charcoal font-sans">
