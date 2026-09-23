@@ -4,14 +4,13 @@ import { getPublishedPosts } from "@/content/posts";
 import { getProducts, getPosts } from "@/lib/cms";
 import { siteConfig } from "@/config/site";
 
+export const PRIMARY_DOMAIN = "https://spirituallandsolution.com.ng";
+
 export const revalidate = 3600; // Revalidate sitemap at most once per hour
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = (
-    process.env.NEXT_PUBLIC_SITE_URL ||
-    siteConfig.url ||
-    "https://spiritualandsolutionhealing.com.ng"
-  ).replace(/\/$/, "");
+  // Always enforce the primary production domain to prevent Google Search Console domain mismatch errors
+  const siteUrl = PRIMARY_DOMAIN;
 
   let products = fallbackProducts;
   let posts = getPublishedPosts();

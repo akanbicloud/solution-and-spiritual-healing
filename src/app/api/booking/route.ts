@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
       try {
         const resend = new Resend(resendApiKey);
         await resend.emails.send({
-          from: "Alfacairo Bookings <noreply@spiritualandsolutionhealing.com.ng>",
+          from: "Alfacairo Bookings <noreply@spirituallandsolution.com.ng>",
           to: [toEmail],
           subject: `New Consultation Booking: ${data.fullName} (${data.service})`,
           text: `New Consultation Booking Request:
