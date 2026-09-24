@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "spiritualandsolutionhealing.com.ng"
+        }
+      ],
+      "destination": "https://www.spiritualandsolutionhealing.com.ng/:path*",
+      "permanent": true
+    }
+  ]
+}

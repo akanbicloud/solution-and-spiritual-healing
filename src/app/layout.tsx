@@ -99,7 +99,7 @@ export const metadata: Metadata = {
     images: [`${siteConfig.url}/images/house.jpg`],
   },
   alternates: {
-    canonical: "/",
+    canonical: `${siteConfig.url}/`,
     languages: {
       en: "/?lang=en",
       ar: "/?lang=ar",
