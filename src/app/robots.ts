@@ -1,7 +1,8 @@
 import { MetadataRoute } from "next";
+import { siteConfig } from "@/config/site";
 
 export default function robots(): MetadataRoute.Robots {
-  const siteUrl = "https://spirituallandsolutionhealing.com.ng";
+  const siteUrl = siteConfig.url;
 
   return {
     rules: {

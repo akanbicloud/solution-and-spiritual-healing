@@ -1,8 +1,10 @@
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL && !process.env.NEXT_PUBLIC_SITE_URL.includes("vercel.app")
+    ? process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "")
+    : "https://www.spiritualandsolutionhealing.com.ng";
+
 export const siteConfig = {
-  url:
-    process.env.NEXT_PUBLIC_SITE_URL && !process.env.NEXT_PUBLIC_SITE_URL.includes("vercel.app")
-      ? process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "")
-      : "https://spirituallandsolutionhealing.com.ng",
+  url: SITE_URL,
   name: "Alfacairo",
   brand: "Solution Spiritual Healing & Prayer",
   brandArabic: "حلول الشفاء والدعاء",

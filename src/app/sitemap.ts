@@ -1,8 +1,9 @@
 import { MetadataRoute } from "next";
+import { siteConfig } from "@/config/site";
 import { fallbackProducts } from "@/content/products";
 import { fallbackPosts } from "@/content/posts";
 
-export const PRIMARY_DOMAIN = "https://spirituallandsolutionhealing.com.ng";
+export const PRIMARY_DOMAIN = siteConfig.url;
 
 export const dynamic = "force-static";
 export const revalidate = false;
