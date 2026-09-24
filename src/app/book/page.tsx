@@ -13,9 +13,15 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Book a Consultation with Alfacairo",
+  title: "Book a Session in Owode Egba | Solution Healing",
   description:
-    "Schedule an in-person spiritual consultation at Alfa Cairo House in Owode Egba, Ogun State, or arrange a direct phone session.",
+    "Book a session with Spiritual and Solution Healing in Owode Egba. Send your details or message us on WhatsApp to confirm your slot.",
+  openGraph: {
+    title: "Book a Session in Owode Egba | Solution Healing",
+    description:
+      "Book a session with Spiritual and Solution Healing in Owode Egba. Send your details or message us on WhatsApp to confirm your slot.",
+    url: `${siteConfig.url}/book`,
+  },
   alternates: {
     canonical: "/book",
   },

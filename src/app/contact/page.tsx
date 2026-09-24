@@ -19,9 +19,15 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Alfacairo & Visit Alfa Cairo House",
+  title: "Contact Us | Spiritual and Solution Healing, Owode Egba",
   description:
-    "Get directions to Alfa Cairo House in Owode Egba, Ogun State. Call, WhatsApp, or join our community group for spiritual guidance and prayers.",
+    "Contact Spiritual and Solution Healing at Alfa Cairo House, Owode Egba, Ogun State. Message us on WhatsApp to order or book a session.",
+  openGraph: {
+    title: "Contact Us | Spiritual and Solution Healing, Owode Egba",
+    description:
+      "Contact Spiritual and Solution Healing at Alfa Cairo House, Owode Egba, Ogun State. Message us on WhatsApp to order or book a session.",
+    url: `${siteConfig.url}/contact`,
+  },
   alternates: {
     canonical: "/contact",
   },

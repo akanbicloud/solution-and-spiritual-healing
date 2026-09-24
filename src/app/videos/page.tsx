@@ -16,9 +16,15 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Videos & Photo Gallery — Alfacairo",
+  title: "Spiritual Guidance Videos | Solution Healing",
   description:
-    "Watch video lectures, spiritual reminders, and explore photos of Alfa Cairo House and traditional wellness preparations.",
+    "Watch videos from Spiritual and Solution Healing on spiritual guidance and daily practice. Message us on WhatsApp to book or order.",
+  openGraph: {
+    title: "Spiritual Guidance Videos | Solution Healing",
+    description:
+      "Watch videos from Spiritual and Solution Healing on spiritual guidance and daily practice. Message us on WhatsApp to book or order.",
+    url: `${siteConfig.url}/videos`,
+  },
   alternates: {
     canonical: "/videos",
   },

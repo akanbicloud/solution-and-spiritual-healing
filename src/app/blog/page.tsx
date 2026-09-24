@@ -8,9 +8,15 @@ import { Rss } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "The Alfacairo Blog — Reminders and Guidance",
+  title: "Spiritual Guidance and Wellness Blog | Solution Healing",
   description:
-    "Spiritual articles, Quranic supplications, Ruqyah guidance, and traditional wellness insights by Alfacairo in Owode Egba, Ogun State.",
+    "Read practical articles on spiritual guidance, patience, family peace and wellness from Spiritual and Solution Healing in Owode Egba.",
+  openGraph: {
+    title: "Spiritual Guidance and Wellness Blog | Solution Healing",
+    description:
+      "Read practical articles on spiritual guidance, patience, family peace and wellness from Spiritual and Solution Healing in Owode Egba.",
+    url: `${siteConfig.url}/blog`,
+  },
   alternates: {
     canonical: "/blog",
   },

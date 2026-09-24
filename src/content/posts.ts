@@ -76,9 +76,9 @@ export const fallbackPosts: Post[] = [
     featured: true,
     publishedAt: "2026-09-15T08:00:00Z",
     readingTimeMinutes: 5,
-    seoTitle: "Finding Spiritual Peace & Protection in Morning Adhkar | Alfacairo",
+    seoTitle: "Power of Consistent Morning Adhkar | Solution Healing",
     seoDescription:
-      "A guided reflection by Alfacairo on establishing daily morning remembrance (adhkar) for continuous peace, clarity, and protection.",
+      "Why a consistent morning adhkar routine matters and simple ways to make it a daily habit. Read the guide from Spiritual and Solution Healing.",
     body: [
       {
         type: "paragraph",
@@ -138,9 +138,9 @@ export const fallbackPosts: Post[] = [
     featured: false,
     publishedAt: "2026-09-18T10:00:00Z",
     readingTimeMinutes: 4,
-    seoTitle: "Cultivating Patience and Faith During Life Delays | Alfacairo",
+    seoTitle: "Patience and Trust During Life Delays | Solution Healing",
     seoDescription:
-      "Spiritual guidance on navigating seasons of delay, financial hardship, and waiting on breakthrough with certainty in divine timing.",
+      "Practical thoughts on staying patient and keeping trust when life seems delayed. Read the article from Spiritual and Solution Healing.",
     body: [
       {
         type: "paragraph",
@@ -184,9 +184,9 @@ export const fallbackPosts: Post[] = [
     featured: false,
     publishedAt: "2026-09-10T14:00:00Z",
     readingTimeMinutes: 4,
-    seoTitle: "The Heritage and Use of Harmal Incense for Home Peace | Alfacairo",
+    seoTitle: "Protecting Your Household with Harmal | Solution Healing",
     seoDescription:
-      "Guide to traditional African and Islamic botanical practices using Harmal incense to freshen home spaces and encourage a calm atmosphere.",
+      "How harmal is traditionally used to protect the household, with practical tips for using it. Read the article from Spiritual and Solution Healing.",
     body: [
       {
         type: "paragraph",
@@ -225,6 +225,9 @@ export const fallbackPosts: Post[] = [
     featured: false,
     publishedAt: "2026-09-05T12:00:00Z",
     readingTimeMinutes: 6,
+    seoTitle: "Family Harmony and Peace in Marriage | Solution Healing",
+    seoDescription:
+      "Simple, practical ways to build family harmony and peace in marriage. Read the article from Spiritual and Solution Healing.",
     body: [
       {
         type: "paragraph",
@@ -259,6 +262,9 @@ export const fallbackPosts: Post[] = [
     featured: false,
     publishedAt: "2026-09-01T09:00:00Z",
     readingTimeMinutes: 5,
+    seoTitle: "Spiritual Neutralization: Breaking Stagnation | Blog",
+    seoDescription:
+      "What spiritual neutralization means and how people approach breaking stagnation in life. Read the article from Spiritual and Solution Healing.",
     body: [
       {
         type: "paragraph",

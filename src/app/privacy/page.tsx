@@ -5,9 +5,15 @@ import { siteConfig } from "@/config/site";
 import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: "Privacy Policy | Spiritual and Solution Healing",
   description:
-    "Privacy Policy for Solution Spiritual Healing & Prayer (Alfacairo). Learn how we handle your personal consultation requests and contact information under Nigerian data protection principles.",
+    "Read how Spiritual and Solution Healing collects, uses and protects your personal information when you use our website and services.",
+  openGraph: {
+    title: "Privacy Policy | Spiritual and Solution Healing",
+    description:
+      "Read how Spiritual and Solution Healing collects, uses and protects your personal information when you use our website and services.",
+    url: `${siteConfig.url}/privacy`,
+  },
   alternates: {
     canonical: "/privacy",
   },

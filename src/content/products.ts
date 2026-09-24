@@ -9,6 +9,8 @@ export interface Product {
   whatsappMessage: string;
   active: boolean;
   order: number;
+  seoTitle?: string;
+  seoDescription?: string;
 }
 
 export const fallbackProducts: Product[] = [
@@ -29,6 +31,9 @@ export const fallbackProducts: Product[] = [
       "Assalamu alaikum Alfacairo, I would like to make an enquiry and order the Cholesterol Solution.",
     active: true,
     order: 1,
+    seoTitle: "Cholesterol Solution | Spiritual and Solution Healing",
+    seoDescription:
+      "Cholesterol Solution from Spiritual and Solution Healing, Owode Egba. See the product description and directions, then order on WhatsApp.",
   },
   {
     id: "prod-2",
@@ -47,6 +52,9 @@ export const fallbackProducts: Product[] = [
       "Assalamu alaikum Alfacairo, I would like to make an enquiry and order the Brain Booster.",
     active: true,
     order: 2,
+    seoTitle: "Brain Booster | Spiritual and Solution Healing",
+    seoDescription:
+      "Brain Booster from Spiritual and Solution Healing, Owode Egba. Read the product description and directions for use, then order on WhatsApp.",
   },
   {
     id: "prod-3",
@@ -65,6 +73,9 @@ export const fallbackProducts: Product[] = [
       "Assalamu alaikum Alfacairo, I would like to make an enquiry and order the Eye Care Drops & Tonic.",
     active: true,
     order: 3,
+    seoTitle: "Eye Care Drops Tonic | Spiritual and Solution Healing",
+    seoDescription:
+      "Eye Care Drops Tonic from Spiritual and Solution Healing, Owode Egba. See the product details and directions, then order on WhatsApp.",
   },
   {
     id: "prod-4",
@@ -83,6 +94,9 @@ export const fallbackProducts: Product[] = [
       "Assalamu alaikum Alfacairo, I would like to make an enquiry and order the Joint & Back Comfort.",
     active: true,
     order: 4,
+    seoTitle: "Joint and Back Comfort | Spiritual and Solution Healing",
+    seoDescription:
+      "Joint and Back Comfort from Spiritual and Solution Healing, Owode Egba. Read the product description and directions, then order on WhatsApp.",
   },
   {
     id: "prod-5",
@@ -101,6 +115,9 @@ export const fallbackProducts: Product[] = [
       "Assalamu alaikum Alfacairo, I would like to make an enquiry and order the Immune Support Capsules.",
     active: true,
     order: 5,
+    seoTitle: "Immune Support Capsules | Spiritual and Solution Healing",
+    seoDescription:
+      "Immune Support Capsules from Spiritual and Solution Healing, Owode Egba. See the details and directions for use, then order on WhatsApp.",
   },
   {
     id: "prod-6",
@@ -119,6 +136,9 @@ export const fallbackProducts: Product[] = [
       "Assalamu alaikum Alfacairo, I would like to make an enquiry and order the Man Power Capsules.",
     active: true,
     order: 6,
+    seoTitle: "Man Power Vitality Capsules | Spiritual and Solution Healing",
+    seoDescription:
+      "Man Power Vitality Capsules from Spiritual and Solution Healing, Owode Egba. See the details and directions for use, then order on WhatsApp.",
   },
   {
     id: "prod-7",
@@ -137,6 +157,9 @@ export const fallbackProducts: Product[] = [
       "Assalamu alaikum Alfacairo, I would like to make an enquiry and order the Stomach Care Tonic.",
     active: true,
     order: 7,
+    seoTitle: "Stomach Care Tonic | Spiritual and Solution Healing",
+    seoDescription:
+      "Stomach Care Tonic from Spiritual and Solution Healing, Owode Egba. Read the product details and directions, then order on WhatsApp.",
   },
   {
     id: "prod-8",
@@ -155,6 +178,9 @@ export const fallbackProducts: Product[] = [
       "Assalamu alaikum Alfacairo, I would like to make an enquiry and order the Body Heat & Burning Sensation Remedy.",
     active: true,
     order: 8,
+    seoTitle: "Body Heat Burning Remedy | Spiritual and Solution Healing",
+    seoDescription:
+      "Body Heat Burning Remedy from Spiritual and Solution Healing, Owode Egba. See the product details and directions, then order on WhatsApp.",
   },
   {
     id: "prod-9",
@@ -173,6 +199,9 @@ export const fallbackProducts: Product[] = [
       "Assalamu alaikum Alfacairo, I would like to make an enquiry and order the Ear Care Drops & Tonic.",
     active: true,
     order: 9,
+    seoTitle: "Ear Care Drops Tonic | Spiritual and Solution Healing",
+    seoDescription:
+      "Ear Care Drops Tonic from Spiritual and Solution Healing, Owode Egba. Read the product details and directions, then order on WhatsApp.",
   },
   {
     id: "prod-10",
@@ -191,6 +220,9 @@ export const fallbackProducts: Product[] = [
       "Assalamu alaikum Alfacairo, I would like to make an enquiry regarding the Spiritual Neutralization Set.",
     active: true,
     order: 10,
+    seoTitle: "Spiritual Neutralization Set | Solution Healing",
+    seoDescription:
+      "Spiritual Neutralization Set from Spiritual and Solution Healing, Owode Egba. See what is included and how to order on WhatsApp.",
   },
   {
     id: "prod-11",
@@ -209,6 +241,9 @@ export const fallbackProducts: Product[] = [
       "Assalamu alaikum Alfacairo, I would like to make an enquiry regarding the Success & Connections Kit.",
     active: true,
     order: 11,
+    seoTitle: "Success Connections Kit | Spiritual and Solution Healing",
+    seoDescription:
+      "Success Connections Kit from Spiritual and Solution Healing, Owode Egba. See what is included and how to order on WhatsApp.",
   },
   {
     id: "prod-12",
@@ -227,5 +262,8 @@ export const fallbackProducts: Product[] = [
       "Assalamu alaikum Alfacairo, I would like to make an enquiry and order the Harmal Incense.",
     active: true,
     order: 12,
+    seoTitle: "Harmal Incense | Spiritual and Solution Healing",
+    seoDescription:
+      "Harmal incense from Spiritual and Solution Healing, Owode Egba. Learn how it is traditionally used and order on WhatsApp.",
   },
 ];

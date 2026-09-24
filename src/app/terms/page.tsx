@@ -5,9 +5,15 @@ import { siteConfig } from "@/config/site";
 import { generateBreadcrumbSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
+  title: "Terms and Conditions | Spiritual and Solution Healing",
   description:
-    "Terms of service, spiritual counseling disclaimers, and traditional herbal guidance disclosures for Solution Spiritual Healing & Prayer (Alfacairo).",
+    "Read the terms and conditions for using the Spiritual and Solution Healing website, placing orders and booking sessions.",
+  openGraph: {
+    title: "Terms and Conditions | Spiritual and Solution Healing",
+    description:
+      "Read the terms and conditions for using the Spiritual and Solution Healing website, placing orders and booking sessions.",
+    url: `${siteConfig.url}/terms`,
+  },
   alternates: {
     canonical: "/terms",
   },

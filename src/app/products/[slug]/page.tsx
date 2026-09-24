@@ -30,12 +30,15 @@ export async function generateMetadata({
   const product = await getProductBySlug(slug);
   if (!product) return { title: "Product Not Found" };
 
+  const title = product.seoTitle || product.name;
+  const description = product.seoDescription || product.shortDescription;
+
   return {
-    title: product.name,
-    description: product.shortDescription,
+    title,
+    description,
     openGraph: {
-      title: product.name,
-      description: product.shortDescription,
+      title,
+      description,
       url: `${siteConfig.url}/products/${product.slug}`,
       images: [
         {

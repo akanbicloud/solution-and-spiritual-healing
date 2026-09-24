@@ -18,9 +18,15 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Alfacairo — Spiritual Healer & Prayer Counsellor",
+  title: "About Us | Spiritual and Solution Healing, Owode Egba",
   description:
-    "Learn about Alfacairo (Sheikh Ismail Adewunmi), dedicated spiritual healer and prayer counsellor serving individuals and families across Nigeria from Alfa Cairo House in Owode Egba, Ogun State.",
+    "Learn about Spiritual and Solution Healing at Alfa Cairo House, Owode Egba, Ogun State: who we are, what we do and how we help.",
+  openGraph: {
+    title: "About Us | Spiritual and Solution Healing, Owode Egba",
+    description:
+      "Learn about Spiritual and Solution Healing at Alfa Cairo House, Owode Egba, Ogun State: who we are, what we do and how we help.",
+    url: `${siteConfig.url}/about`,
+  },
   alternates: {
     canonical: "/about",
   },

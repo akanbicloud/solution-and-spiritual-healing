@@ -7,9 +7,15 @@ import { generateBreadcrumbSchema } from "@/lib/schema";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Traditional Herbal Products & Spiritual Preparations",
+  title: "Spiritual and Wellness Products | Solution Healing",
   description:
-    "Explore our complete range of 12 traditional herbal formulations and spiritual preparations, prepared under traditional wellness wisdom, with Nationwide Delivery.",
+    "Browse spiritual and wellness products from Spiritual and Solution Healing in Owode Egba. See the details and order on WhatsApp.",
+  openGraph: {
+    title: "Spiritual and Wellness Products | Solution Healing",
+    description:
+      "Browse spiritual and wellness products from Spiritual and Solution Healing in Owode Egba. See the details and order on WhatsApp.",
+    url: `${siteConfig.url}/products`,
+  },
   alternates: {
     canonical: "/products",
   },

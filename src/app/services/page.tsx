@@ -23,9 +23,15 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Spiritual Services & Prayer Counselling",
+  title: "Spiritual Healing Services in Owode Egba | Solution Healing",
   description:
-    "Compassionate, faith-inspired spiritual guidance and prayer counselling with Alfacairo for life breakthrough, protection, and family harmony in Owode Egba, Ogun State and remotely worldwide.",
+    "Explore the spiritual healing and guidance services from Spiritual and Solution Healing in Owode Egba, Ogun State. Book a session today.",
+  openGraph: {
+    title: "Spiritual Healing Services in Owode Egba | Solution Healing",
+    description:
+      "Explore the spiritual healing and guidance services from Spiritual and Solution Healing in Owode Egba, Ogun State. Book a session today.",
+    url: `${siteConfig.url}/services`,
+  },
   alternates: {
     canonical: "/services",
   },

@@ -39,11 +39,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: {
-    default: `${siteConfig.brand} | ${siteConfig.name} — Owode Egba`,
-    template: `%s | ${siteConfig.brand}`,
-  },
-  description: `${siteConfig.subline}. Dedicated Islamic spiritual counselling, prophetic Ruqyah prayer support, and traditional prayer-prepared botanical wellness at Alfa Cairo House in Owode Egba, Ogun State, Nigeria.`,
+  title: "Spiritual and Solution Healing | Owode Egba, Ogun State",
+  description:
+    "Spiritual and Solution Healing in Owode Egba, Ogun State. Explore our healing services and wellness products, then book a session or order on WhatsApp.",
   keywords: [
     "Alfacairo",
     "Solution Spiritual Healing and Prayer",
@@ -77,8 +75,9 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: `${siteConfig.brand} | ${siteConfig.name}`,
-    description: `${siteConfig.subline}. Dedicated Islamic spiritual counselling, Ruqyah prayers, and natural botanical remedies at Alfa Cairo House, Owode Egba, Ogun State.`,
+    title: "Spiritual and Solution Healing | Owode Egba, Ogun State",
+    description:
+      "Spiritual and Solution Healing in Owode Egba, Ogun State. Explore our healing services and wellness products, then book a session or order on WhatsApp.",
     url: siteConfig.url,
     siteName: siteConfig.brand,
     images: [
@@ -94,8 +93,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.brand} | ${siteConfig.name}`,
-    description: `${siteConfig.subline}. Spiritual guidance and traditional herbal wellness at Alfa Cairo House in Owode Egba, Ogun State.`,
+    title: "Spiritual and Solution Healing | Owode Egba, Ogun State",
+    description:
+      "Spiritual and Solution Healing in Owode Egba, Ogun State. Explore our healing services and wellness products, then book a session or order on WhatsApp.",
     images: [`${siteConfig.url}/images/house.jpg`],
   },
   alternates: {
