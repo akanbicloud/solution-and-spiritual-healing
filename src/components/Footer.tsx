@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { siteConfig } from "@/config/site";
 import { useI18n } from "@/i18n/context";
 import {
@@ -19,7 +20,17 @@ import {
 } from "@phosphor-icons/react";
 
 export function Footer() {
+  const pathname = usePathname();
   const { t } = useI18n();
+
+  // Exclude Footer from dedicated ad landing pages
+  if (
+    pathname === "/consultation" ||
+    pathname === "/spiritual-consultation" ||
+    pathname?.startsWith("/consultation/")
+  ) {
+    return null;
+  }
 
   return (
     <footer className="w-full bg-cream border-t border-gold-hairline pt-12 sm:pt-16 pb-8 sm:pb-12 transition-colors">

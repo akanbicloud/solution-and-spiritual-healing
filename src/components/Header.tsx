@@ -24,6 +24,15 @@ export function Header() {
   const { t } = useI18n();
   const { totalCount, openDrawer } = useCart();
 
+  // Exclude Header from dedicated ad landing pages
+  if (
+    pathname === "/consultation" ||
+    pathname === "/spiritual-consultation" ||
+    pathname?.startsWith("/consultation/")
+  ) {
+    return null;
+  }
+
   const navLinks = [
     { href: "/", label: t("nav", "home") },
     { href: "/about", label: t("nav", "about") },

@@ -1,11 +1,23 @@
 "use client";
 
 import React, { useState } from "react";
+import { usePathname } from "next/navigation";
 import { siteConfig } from "@/config/site";
 import { WhatsappLogo, X } from "@phosphor-icons/react";
 
 export function FloatingWhatsApp() {
+  const pathname = usePathname();
   const [tooltipDismissed, setTooltipDismissed] = useState(false);
+
+  // Exclude floating WhatsApp on dedicated ad landing pages (it has its own sticky CTA)
+  if (
+    pathname === "/consultation" ||
+    pathname === "/spiritual-consultation" ||
+    pathname?.startsWith("/consultation/")
+  ) {
+    return null;
+  }
+
   const defaultMessage = encodeURIComponent("Assalamu alaikum, I would like to make an enquiry.");
   const waUrl = `https://wa.me/${siteConfig.whatsapp}?text=${defaultMessage}`;
 
