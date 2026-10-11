@@ -1,99 +1,84 @@
 import { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
-import { fallbackProducts } from "@/content/products";
-import { fallbackPosts } from "@/content/posts";
+import { getPosts, getProducts } from "@/lib/cms";
 
 export const PRIMARY_DOMAIN = siteConfig.url;
 
-export const dynamic = "force-static";
-export const revalidate = false;
+// Rebuilt at most once an hour so products and posts published in the CMS appear without a redeploy.
+export const revalidate = 3600;
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = PRIMARY_DOMAIN;
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {
       url: `${siteUrl}`,
-      lastModified: new Date(),
       changeFrequency: "daily",
       priority: 1.0,
     },
     {
       url: `${siteUrl}/products`,
-      lastModified: new Date(),
       changeFrequency: "daily",
       priority: 0.95,
     },
     {
       url: `${siteUrl}/services`,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${siteUrl}/blog`,
-      lastModified: new Date(),
       changeFrequency: "daily",
       priority: 0.9,
     },
     {
       url: `${siteUrl}/book`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.85,
     },
     {
       url: `${siteUrl}/about`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${siteUrl}/videos`,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: `${siteUrl}/contact`,
-      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.8,
     },
     {
       url: `${siteUrl}/privacy`,
-      lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
       url: `${siteUrl}/terms`,
-      lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.3,
     },
   ];
 
-  const productRoutes: MetadataRoute.Sitemap = fallbackProducts
+  const [products, posts] = await Promise.all([getProducts(), getPosts()]);
+
+  // Only real dates are reported. A made-up "modified today" on every page teaches Google to ignore the field.
+  const productRoutes: MetadataRoute.Sitemap = products
     .filter((p) => p.active !== false)
     .map((p) => ({
       url: `${siteUrl}/products/${p.slug}`,
-      lastModified: new Date(),
       changeFrequency: "weekly",
       priority: 0.85,
     }));
 
-  const postRoutes: MetadataRoute.Sitemap = fallbackPosts.map((p) => {
-    let lastMod = new Date();
-    if (p.publishedAt) {
-      const parsed = new Date(p.publishedAt);
-      if (!isNaN(parsed.getTime())) {
-        lastMod = parsed;
-      }
-    }
+  const postRoutes: MetadataRoute.Sitemap = posts.map((p) => {
+    const parsed = p.publishedAt ? new Date(p.publishedAt) : null;
     return {
       url: `${siteUrl}/blog/${p.slug}`,
-      lastModified: lastMod,
+      ...(parsed && !isNaN(parsed.getTime()) ? { lastModified: parsed } : {}),
       changeFrequency: "monthly",
       priority: 0.75,
     };

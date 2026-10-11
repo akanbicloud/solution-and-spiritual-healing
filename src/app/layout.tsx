@@ -100,12 +100,6 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: `${siteConfig.url}/`,
-    languages: {
-      en: "/?lang=en",
-      ar: "/?lang=ar",
-      yo: "/?lang=yo",
-      ha: "/?lang=ha",
-    },
   },
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
