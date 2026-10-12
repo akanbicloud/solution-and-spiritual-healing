@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   keywords: [
     "An-Najaat Wa Tahseenaat",
+    "Najat wa Tahsinat",
+    "النجاة والتحصينات",
     "Alfa Cairo Wednesday prayer",
     "weekly prayer Wednesday night",
     "Alfacairo live prayer",
@@ -41,7 +43,7 @@ export default function WeeklyPrayerPage() {
     "@type": "Event",
     "@id": `${siteUrl}/weekly-prayer#event`,
     name: `${wp.title} — ${wp.subtitle}`,
-    alternateName: ["Alfa Cairo Wednesday prayer", "Weekly Wednesday prayer"],
+    alternateName: ["Alfa Cairo Wednesday prayer", "Weekly Wednesday prayer", ...wp.nameVariants, wp.titleArabic],
     description: `${wp.subtitle} led by Sheikh Ismail Adewunmi (Alfacairo, Alfa Cairo). Held every ${wp.scheduleDay} at ${wp.scheduleTime} (${wp.timezone}) and streamed live on Facebook.`,
     startDate: next.iso,
     eventStatus: "https://schema.org/EventScheduled",
@@ -65,6 +67,10 @@ export default function WeeklyPrayerPage() {
     {
       question: "When is the weekly Wednesday prayer with Alfa Cairo?",
       answer: `An-Najaat Wa Tahseenaat is held every ${wp.scheduleDay} at ${wp.scheduleTime} (${wp.timezone}). The next session is ${next.label} at ${wp.scheduleTime}.`,
+    },
+    {
+      question: "How do you spell An-Najaat Wa Tahseenaat?",
+      answer: `The Arabic name is ${wp.titleArabic}. In English letters it is written in several ways, including ${wp.nameVariants.join(", ")}. All of them refer to the same weekly Wednesday prayer.`,
     },
     {
       question: "Where can I watch An-Najaat Wa Tahseenaat?",
@@ -93,6 +99,11 @@ export default function WeeklyPrayerPage() {
         </h1>
         <p className="mt-3 text-sm sm:text-lg text-muted leading-relaxed">
           The weekly live prayer led by Alfa Cairo (Alfacairo, Sheikh Ismail Adewunmi) of Spiritual and Solution Healing.
+        </p>
+
+        <p className="mt-3 text-xs sm:text-sm text-muted">
+          <span className="font-arabic text-base text-emerald-deep font-bold" dir="rtl" lang="ar">{wp.titleArabic}</span>
+          {" · "}Also written as {wp.nameVariants.join(", ")}.
         </p>
 
         <dl className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
