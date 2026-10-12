@@ -75,6 +75,14 @@ export const siteConfig = {
   weeklyPrayer: {
     title: "An-Najaat Wa Tahseenaat",
     titleArabic: "النجاة والتحصينات",
+    // Common transliterations of the same Arabic name, as people type them.
+    nameVariants: [
+      "An Najaat Wa Tahseenaat",
+      "Annajaat Wa Tahseenaat",
+      "Najaat Wa Tahseenaat",
+      "An-Najat wa Tahsinat",
+      "Najat wa Tahsinat",
+    ],
     subtitle: "Weekly Success & Divine Protection Prayer",
     scheduleDay: "Wednesday",
     scheduleTime: "10:00 PM",
