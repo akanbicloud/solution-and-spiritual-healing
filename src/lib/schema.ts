@@ -99,7 +99,7 @@ export function generateLocalBusinessAndOrganizationSchema() {
         url: `${siteUrl}/about`,
         mainEntityOfPage: `${siteUrl}/about`,
         image: `${siteUrl}/images/alfacairo-portrait.jpg`,
-        description: `${siteConfig.name} (Sheikh Ismail Adewunmi, also known as Alfa Cairo and Alfa Cairo Alagbara Omi) is a spiritual healer and prayer counsellor at Alfa Cairo House, Owode Egba, Ogun State, Nigeria.`,
+        description: `${siteConfig.name} (Sheikh Ismail Adewunmi, also known as Alfa Cairo and Alfa Cairo Alagbara Omi) is a spiritual healer and prayer counsellor at Alfa Cairo House, Owode Egba, Ogun State, Nigeria. He studied at ${siteConfig.education.school}, Egypt, before returning to Nigeria.`,
         homeLocation: {
           "@type": "Place",
           address: {
@@ -108,6 +108,12 @@ export function generateLocalBusinessAndOrganizationSchema() {
             addressRegion: siteConfig.region,
             addressCountry: siteConfig.countryCode,
           },
+        },
+        alumniOf: {
+          "@type": "CollegeOrUniversity",
+          name: siteConfig.education.school,
+          url: siteConfig.education.schoolUrl,
+          address: { "@type": "PostalAddress", addressCountry: "EG" },
         },
         worksFor: { "@id": `${siteUrl}/#organization` },
         knowsAbout: ["Spiritual counselling", "Ruqyah", "Islamic prayer", "Traditional herbal remedies"],

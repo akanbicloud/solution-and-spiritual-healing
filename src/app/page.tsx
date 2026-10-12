@@ -625,6 +625,11 @@ export default async function HomePage() {
                     "Sheikh Ismail Adewunmi (Alfacairo) is a respected spiritual healer, prayer counsellor, and Islamic botanical wellness practitioner at Alfa Cairo House in Owode Egba, Ogun State, Nigeria. Solution Spiritual Healing & Prayer provides confidential pastoral guidance, Quranic Ruqyah supplications, and prayer-prepared traditional herbal formulations to support health, peace, and spiritual breakthroughs.",
                 },
                 {
+                  question: "Who is Alfa Cairo and where did he study?",
+                  answer:
+                    "Alfa Cairo (Alfacairo, Sheikh Ismail Adewunmi, also known as Alfa Cairo Alagbara Omi) is a spiritual healer and prayer counsellor at Alfa Cairo House in Owode Egba, Ogun State, Nigeria. He studied at The American University in Cairo, Egypt, before returning to Nigeria.",
+                },
+                {
                   question: "What spiritual and herbal services are provided?",
                   answer:
                     "We offer private spiritual counselling, prayers for career and business breakthroughs, spiritual neutralization and cleansing, protection from evil eye and envy (hasad and ruqyah), marital reconciliation, and 12 authentic traditional herbal formulations delivered nationwide across Nigeria.",
@@ -671,6 +676,10 @@ export default async function HomePage() {
               {
                 q: "Who is Alfacairo and what is Solution Spiritual Healing & Prayer?",
                 a: "Sheikh Ismail Adewunmi (Alfacairo) is a respected spiritual healer, prayer counsellor, and Islamic botanical wellness practitioner at Alfa Cairo House in Owode Egba, Ogun State, Nigeria. Solution Spiritual Healing & Prayer provides confidential pastoral guidance, Quranic Ruqyah supplications, and prayer-prepared traditional herbal formulations to support health, peace, and spiritual breakthroughs.",
+              },
+              {
+                q: "Who is Alfa Cairo and where did he study?",
+                a: "Alfa Cairo (Alfacairo, Sheikh Ismail Adewunmi, also known as Alfa Cairo Alagbara Omi) is a spiritual healer and prayer counsellor at Alfa Cairo House in Owode Egba, Ogun State, Nigeria. He studied at The American University in Cairo, Egypt, before returning to Nigeria.",
               },
               {
                 q: "What spiritual and herbal services are provided?",
