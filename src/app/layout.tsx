@@ -129,6 +129,7 @@ export default function RootLayout({
       className={`${playfair.variable} ${inter.variable} ${amiri.variable} h-full antialiased`}
     >
       <head>
+        <link rel="alternate" type="text/plain" href="/llms.txt" title="Summary for AI assistants" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaJsonLd) }}
