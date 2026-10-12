@@ -39,12 +39,14 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: "Alfacairo (Alfa Cairo) | Spiritual and Solution Healing, Owode Egba",
+  title: "Alfa Cairo Spiritual | Alfacairo, Spiritual and Solution Healing",
   description:
-    "Alfacairo (Alfa Cairo, Sheikh Ismail Adewunmi) of Spiritual and Solution Healing, Alfa Cairo House, Owode Egba, Ogun State. Prayer counselling, Ruqyah, wellness products. Book or order on WhatsApp.",
+    "Alfa Cairo (Alfacairo, Sheikh Ismail Adewunmi) is a spiritual healer and prayer counsellor of Spiritual and Solution Healing, Alfa Cairo House, Owode Egba, Ogun State. Educated at the American University in Cairo. Book or order on WhatsApp.",
   keywords: [
     "Alfacairo",
     "Alfa Cairo",
+    "Alfa Cairo spiritual",
+    "Alfa Cairo spiritual healer",
     "Alfa Cairo Alagbara Omi",
     "Spiritual and Solution Healing",
     "Solution Spiritual Healing and Prayer",
@@ -78,9 +80,9 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "Alfacairo (Alfa Cairo) | Spiritual and Solution Healing, Owode Egba",
+    title: "Alfa Cairo Spiritual | Alfacairo, Spiritual and Solution Healing",
     description:
-      "Alfacairo (Alfa Cairo, Sheikh Ismail Adewunmi) of Spiritual and Solution Healing, Alfa Cairo House, Owode Egba, Ogun State. Prayer counselling, Ruqyah, wellness products. Book or order on WhatsApp.",
+      "Alfa Cairo (Alfacairo, Sheikh Ismail Adewunmi) is a spiritual healer and prayer counsellor of Spiritual and Solution Healing, Alfa Cairo House, Owode Egba, Ogun State. Educated at the American University in Cairo. Book or order on WhatsApp.",
     url: siteConfig.url,
     siteName: siteConfig.brand,
     images: [
@@ -96,9 +98,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Alfacairo (Alfa Cairo) | Spiritual and Solution Healing, Owode Egba",
+    title: "Alfa Cairo Spiritual | Alfacairo, Spiritual and Solution Healing",
     description:
-      "Alfacairo (Alfa Cairo, Sheikh Ismail Adewunmi) of Spiritual and Solution Healing, Alfa Cairo House, Owode Egba, Ogun State. Prayer counselling, Ruqyah, wellness products. Book or order on WhatsApp.",
+      "Alfa Cairo (Alfacairo, Sheikh Ismail Adewunmi) is a spiritual healer and prayer counsellor of Spiritual and Solution Healing, Alfa Cairo House, Owode Egba, Ogun State. Educated at the American University in Cairo. Book or order on WhatsApp.",
     images: [`${siteConfig.url}/images/house.jpg`],
   },
   alternates: {

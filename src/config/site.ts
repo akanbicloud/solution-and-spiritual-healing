@@ -26,6 +26,13 @@ export const siteConfig = {
     "Alfa Cairo House",
     "Alfa Cairo Sanctuary",
   ],
+  // Provided by the site owner. Keep wording factual: no degree/years claimed.
+  education: {
+    school: "The American University in Cairo",
+    schoolUrl: "https://www.aucegypt.edu",
+    country: "Egypt",
+    summary: "studied at The American University in Cairo, Egypt, before returning to Nigeria",
+  },
   tagline: "Healing • Protection • Breakthrough",
   subline: "Faith. Hope. Healing. Transformation.",
   phoneDisplay: "08035948898",

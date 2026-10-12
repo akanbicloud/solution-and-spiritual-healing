@@ -18,13 +18,13 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Alfacairo (Alfa Cairo Alagbara Omi) | Spiritual and Solution Healing",
+  title: "About Alfa Cairo Spiritual (Alfacairo) | Spiritual and Solution Healing",
   description:
-    "Who is Alfacairo? Alfa Cairo (Sheikh Ismail Adewunmi, Alfa Cairo Alagbara Omi) is a spiritual healer and prayer counsellor of Spiritual and Solution Healing at Alfa Cairo House, Owode Egba, Ogun State.",
+    "Who is Alfa Cairo? Alfacairo (Sheikh Ismail Adewunmi, Alfa Cairo Alagbara Omi) is a spiritual healer and prayer counsellor who studied at the American University in Cairo, Egypt, and now serves from Alfa Cairo House, Owode Egba, Ogun State.",
   openGraph: {
-    title: "About Alfacairo (Alfa Cairo Alagbara Omi) | Spiritual and Solution Healing",
+    title: "About Alfa Cairo Spiritual (Alfacairo) | Spiritual and Solution Healing",
     description:
-      "Who is Alfacairo? Alfa Cairo (Sheikh Ismail Adewunmi, Alfa Cairo Alagbara Omi) is a spiritual healer and prayer counsellor of Spiritual and Solution Healing at Alfa Cairo House, Owode Egba, Ogun State.",
+      "Who is Alfa Cairo? Alfacairo (Sheikh Ismail Adewunmi, Alfa Cairo Alagbara Omi) is a spiritual healer and prayer counsellor who studied at the American University in Cairo, Egypt, and now serves from Alfa Cairo House, Owode Egba, Ogun State.",
     url: `${siteConfig.url}/about`,
   },
   alternates: {
@@ -114,6 +114,17 @@ export default async function AboutPage() {
                 </p>
                 <p className="text-sm sm:text-base text-muted leading-relaxed">
                   Operating under the brand name <strong className="font-semibold text-emerald-deep">Solution Spiritual Healing &amp; Prayer</strong> (Arabic: <span className="font-arabic font-bold">حلول الشفاء والدعاء</span>), Alfacairo believes that human afflictions—whether physical discomfort, spiritual stagnation, emotional burdens, or family unrest—can find relief when touched by genuine supplication and time-honored traditional remedies.
+                </p>
+              </div>
+
+              {/* Background */}
+              <div className="p-5 sm:p-6 rounded-3xl bg-white border border-gold-hairline shadow-soft-sm">
+                <h3 className="text-lg font-bold font-serif text-charcoal mb-2">
+                  Education &amp; Background
+                </h3>
+                <p className="text-sm sm:text-base text-charcoal/90 leading-relaxed">
+                  Alfacairo (Sheikh Ismail Adewunmi, also known as Alfa Cairo) {siteConfig.education.summary}.
+                  Today he serves individuals and families across Nigeria from Alfa Cairo House in {siteConfig.city}, {siteConfig.region}.
                 </p>
               </div>
 
