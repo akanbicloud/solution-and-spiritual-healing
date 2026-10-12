@@ -18,13 +18,13 @@ import {
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us | Spiritual and Solution Healing, Owode Egba",
+  title: "About Alfacairo (Alfa Cairo Alagbara Omi) | Spiritual and Solution Healing",
   description:
-    "Learn about Spiritual and Solution Healing at Alfa Cairo House, Owode Egba, Ogun State: who we are, what we do and how we help.",
+    "Who is Alfacairo? Alfa Cairo (Sheikh Ismail Adewunmi, Alfa Cairo Alagbara Omi) is a spiritual healer and prayer counsellor of Spiritual and Solution Healing at Alfa Cairo House, Owode Egba, Ogun State.",
   openGraph: {
-    title: "About Us | Spiritual and Solution Healing, Owode Egba",
+    title: "About Alfacairo (Alfa Cairo Alagbara Omi) | Spiritual and Solution Healing",
     description:
-      "Learn about Spiritual and Solution Healing at Alfa Cairo House, Owode Egba, Ogun State: who we are, what we do and how we help.",
+      "Who is Alfacairo? Alfa Cairo (Sheikh Ismail Adewunmi, Alfa Cairo Alagbara Omi) is a spiritual healer and prayer counsellor of Spiritual and Solution Healing at Alfa Cairo House, Owode Egba, Ogun State.",
     url: `${siteConfig.url}/about`,
   },
   alternates: {
@@ -48,17 +48,9 @@ export default async function AboutPage() {
     name: "About Alfacairo — Spiritual Healer & Prayer Counsellor",
     description:
       "Learn about Alfacairo (Sheikh Ismail Adewunmi), dedicated spiritual healer and prayer counsellor serving individuals and families across Nigeria from Alfa Cairo House in Owode Egba, Ogun State.",
-    mainEntity: {
-      "@type": "Person",
-      name: siteConfig.name,
-      alternateName: ["Alfacairo", "Alfa Cairo", "Sheikh Ismail Adewunmi"],
-      jobTitle: "Spiritual Healer & Islamic Prayer Counsellor",
-      worksFor: {
-        "@id": `${siteConfig.url}/#organization`,
-      },
-      image: `${siteConfig.url}/images/alfacairo-portrait.jpg`,
-      description: settings.bio,
-    },
+    // Same entity as the Person node in the site-wide graph (layout) so Google
+    // sees one "Alfacairo", not two.
+    mainEntity: { "@id": `${siteConfig.url}/#alfacairo` },
   };
 
   return (
@@ -84,6 +76,9 @@ export default async function AboutPage() {
           <div className="mt-2 font-arabic text-lg sm:text-xl text-emerald-deep font-bold" dir="rtl">
             فضيلة الشيخ ألفا قاهرة • حلول الشفاء والدعاء
           </div>
+          <p className="mt-2 text-xs sm:text-sm text-muted">
+            Also known as {siteConfig.personAliases.filter((n) => n !== siteConfig.name).join(" · ")}
+          </p>
           <p className="mt-3 sm:mt-4 text-sm sm:text-lg text-muted max-w-2xl mx-auto leading-relaxed">
             Offering sincere prayer, Quranic supplication, and traditional botanical remedies rooted in faith, compassion, and truth.
           </p>

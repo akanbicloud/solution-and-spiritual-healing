@@ -8,6 +8,24 @@ export const siteConfig = {
   name: "Alfacairo",
   brand: "Solution Spiritual Healing & Prayer",
   brandArabic: "حلول الشفاء والدعاء",
+  // Every spelling people actually search for. Used in schema.org alternateName
+  // and in the visible "also known as" line so Google/AI see one consistent entity.
+  personAliases: [
+    "Alfacairo",
+    "Alfa Cairo",
+    "Alfa Cairo Alagbara Omi",
+    "Alfacairo Alagbara Omi",
+    "Sheikh Ismail Adewunmi",
+  ],
+  brandAliases: [
+    "Spiritual and Solution Healing",
+    "Spiritual & Solution Healing",
+    "Spiritual and Solution Healing and Prayer",
+    "Solution Spiritual Healing and Prayer",
+    "Solution Spiritual Healing",
+    "Alfa Cairo House",
+    "Alfa Cairo Sanctuary",
+  ],
   tagline: "Healing • Protection • Breakthrough",
   subline: "Faith. Hope. Healing. Transformation.",
   phoneDisplay: "08035948898",
