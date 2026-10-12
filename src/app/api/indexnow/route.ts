@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { siteConfig } from "@/config/site";
+import sitemap from "@/app/sitemap";
 
 /**
  * IndexNow Submission API Route
@@ -30,6 +31,7 @@ export async function POST(req: NextRequest) {
           `${siteUrl}/products`,
           `${siteUrl}/about`,
           `${siteUrl}/contact`,
+          `${siteUrl}/weekly-prayer`,
           `${siteUrl}/book`,
           `${siteUrl}/blog`,
           `${siteUrl}/videos`,
@@ -64,11 +66,25 @@ export async function POST(req: NextRequest) {
   }
 }
 
-export async function GET() {
+/**
+ * Open /api/indexnow?submit=1 in a browser to send every page in the sitemap to Bing
+ * (ChatGPT search relies on Bing). Without ?submit=1 it only shows the settings.
+ */
+export async function GET(req: NextRequest) {
   const siteUrl = siteConfig.url;
   const host = new URL(siteUrl).hostname;
   const key = siteConfig.indexNowKey;
   const keyLocation = `${siteUrl}/${key}.txt`;
+
+  if (req.nextUrl.searchParams.get("submit") === "1") {
+    const urlList = (await sitemap()).map((x) => x.url).slice(0, 10000);
+    const response = await fetch("https://api.indexnow.org/indexnow", {
+      method: "POST",
+      headers: { "Content-Type": "application/json; charset=utf-8" },
+      body: JSON.stringify({ host, key, keyLocation, urlList }),
+    }).catch(() => null);
+    return NextResponse.json({ success: !!response && (response.status === 200 || response.status === 202), status: response?.status ?? "network error", submittedCount: urlList.length });
+  }
 
   return NextResponse.json({
     status: "ready",
@@ -76,6 +92,6 @@ export async function GET() {
     key,
     keyLocation,
     endpoint: "https://api.indexnow.org/indexnow",
-    usage: "Send POST with optional JSON { urlList: ['https://...'] }",
+    usage: "Open /api/indexnow?submit=1 to send every sitemap page, or POST { urlList: [...] }",
   });
 }
