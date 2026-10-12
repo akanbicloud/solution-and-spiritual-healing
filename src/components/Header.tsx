@@ -55,7 +55,7 @@ export function Header() {
             </span>
             <span className="text-emerald-300">•</span>
             <Link
-              href="/#weekly-prayer-session"
+              href="/weekly-prayer"
               className="flex items-center gap-1.5 text-gold-light hover:underline font-semibold"
             >
               <Broadcast size={13} weight="bold" className="text-crimson animate-pulse" />
