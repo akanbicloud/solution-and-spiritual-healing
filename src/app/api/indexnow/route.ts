@@ -92,17 +92,23 @@ export async function GET(req: NextRequest) {
         skipped.push(u);
       }
     }
+    // keyLocation is optional: without it Bing reads https://<host>/<key>.txt, which we also serve.
+    let withKeyLocation = true;
     const send = async (urlList: string[]) => {
       const r = await fetch("https://api.indexnow.org/indexnow", {
         method: "POST",
         headers: { "Content-Type": "application/json; charset=utf-8" },
-        body: JSON.stringify({ host, key, keyLocation, urlList }),
+        body: JSON.stringify(withKeyLocation ? { host, key, keyLocation, urlList } : { host, key, urlList }),
       }).catch(() => null);
       const reason = r && !(r.status === 200 || r.status === 202) ? (await r.text().catch(() => "")).slice(0, 300) : "";
       return { ok: !!r && (r.status === 200 || r.status === 202), status: r?.status ?? "network error", reason };
     };
     const all = [...clean].slice(0, 10000);
     let res = await send(all);
+    if (!res.ok && /keyLocation/i.test(res.reason)) {
+      withKeyLocation = false;
+      res = await send(all);
+    }
     let submitted = all.length;
     // If the full list is refused, at least send the main pages.
     if (!res.ok && res.status === 400) {
@@ -110,7 +116,7 @@ export async function GET(req: NextRequest) {
       res = await send(core);
       submitted = core.length;
     }
-    return NextResponse.json({ success: res.ok, status: res.status, submittedCount: submitted, reason: res.reason || undefined, skipped: skipped.length ? skipped : undefined });
+    return NextResponse.json({ success: res.ok, status: res.status, submittedCount: submitted, host, keyLocation: withKeyLocation ? keyLocation : `(not sent) https://${host}/${key}.txt`, reason: res.reason || undefined, skipped: skipped.length ? skipped : undefined });
   }
 
   return NextResponse.json({
